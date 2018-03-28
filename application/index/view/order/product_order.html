@@ -1,0 +1,106 @@
+{extend name="public:base" /}
+
+{block name="css"}
+<style type="text/css">
+    .address_show{padding: 10px;}
+    .address_show p{line-height: 22px;}
+</style>
+<link rel="stylesheet" href="__STATIC__/qiantai/css/css.css">
+{/block}
+
+{block name="content"}
+
+<div class="jsxx">
+    <h6>结算信息</h6>
+    <dl>
+        <div id="address" style="display: none;">
+
+            {volist name="address" id="a"}
+            <label href="javascript:;"  class="aas" style="padding: 10px;border:1px solid #eee;box-sizing:border-box;display: block;text-align:left;width: 100%;overflow: hidden;"  onclick="getid(this,'{$a.id}');" >
+                <p>{$a.name} ({$a.phone})</p>
+                <p>{$a.details}</p>
+            </label>
+            {/volist}
+            <a href='{:url("User/add_address")}' style="width: 100%;display: block;margin-top:20px;border-radius:5px;background: #007AFF;color: #fff;padding: 10px 0;">添加收获地址</a>
+        </div>
+
+        <dt><a href='javascript:;' onclick="address()">选择收货地址<span></span></a></dt>
+        <dd class="address_show"></dd>
+
+
+
+        <dd class="jsxx_tp">
+            <i><img src="{$data.img}"/></i>
+            <div class="jsxx_zj">
+                <h3>{$data.product_name}</h3>
+                <em>数量：X<a>{$data.buy_num}</a></em>
+            </div>
+            <span>积分：{$data.sales_jifen}</span>
+        </dd>
+        <form id="orderForm" method="post" action='{:url("Order/product_pay")}'>
+            <dd><a href="#">买家留言<input placeholder="填写卖家需求" type="text" id="remark" name="remark"/></a></dd>
+            
+            <dd class="dd_2"><i>总计：积分：&nbsp;{$data.buy_num*$data.sales_jifen}</i></dd>
+            
+            <input type="hidden" id="pay_type" name="pay_type" value="1"/>
+            <input type="hidden" id="address_id" name="address_id" value=""/>
+            <input type="hidden" id="goods_id" name="product_id" value="{$data.id}"/>
+            <input type="hidden" id="buy_sum" name="buy_sum" value="{$data.buy_num}"/>
+            <input type="hidden" id="total_price" name="total_price"value="{$data.buy_num*$data.sales_jifen}">
+        </form>
+        <a href='javascript:;' onclick="submitPay()">确认支付</a>
+    </dl>
+</div>
+{/block}
+
+{block name="js"}
+<script src="__STATIC__/qiantai/js/jquery.js"></script>
+<script src="__STATIC__/qiantai/js/layer/mobile/layer_mobile.js"></script>
+<script src="__STATIC__/qiantai/js/layer/mobile/layer.js"></script>
+<script type="text/javascript">
+    var t = $("#total_points").val();
+    var q = $("#chongxiao").val();
+    function address(){
+        var content = $('#address').html();
+        layer.open({
+            title: ['选择收货地址','background-color:#007AFF;color:#fff;height:50px;line-height:50px;'],
+            style: 'width: 100%; height: auto;background-color:#fff',
+            content: content,
+            yes: function(index){
+            }
+        })
+    }
+
+    function getid(obj,id){
+        var tx = $(obj).html();
+        $(".address_show").html(tx);
+        $("#address_id").val(id);
+        layer.closeAll();
+    }
+
+
+    function submitPay(){
+
+        var address_id = $("#address_id").val();
+        if( address_id == "" ){
+            layer_alert("请选择地址");
+            return false;
+        }
+
+        var price = $("#price").val();
+        var total_price = $("#total_price").val();
+        var buy_sum = $("#buy_sum").val();
+        var str = '需要&nbsp;积分'+ total_price;
+//        if( my_acting < acting ){
+//            var  sy = acting - parseInt(my_acting);
+//            var zg = parseInt(total_price) + parseInt(sy);
+//            str = "需要现金"+ zg + "代金劵"+ parseInt(my_acting);
+//        }else{
+//            str = "需要现金"+ total_price + "代金劵"+acting;
+//        }
+        $("#orderForm").submit();
+
+    }
+
+</script>
+{/block}

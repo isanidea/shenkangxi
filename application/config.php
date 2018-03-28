@@ -146,9 +146,13 @@ return [
 //        '__css__'=>'/public/static/css',
 //        '__images__'=>'/public/static/images',
     ],
-    // 默认跳转页面对应的模板文件
-    'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
-    'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
+    // // 默认跳转页面对应的模板文件
+    // 'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
+    // 'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
+        
+    'dispatch_error_tmpl' => APP_PATH.'common/view/public/error.tpl',
+    //默认成功跳转对应的模板文件
+    'dispatch_success_tmpl' => APP_PATH.'common/view/public/success.tpl',
 
     // +----------------------------------------------------------------------
     // | 异常及错误设置

@@ -12,8 +12,7 @@ use tool\TransmitSms;
 
 class Login extends Base
 {
-
-
+    
     public function index()
     {
         return $this->fetch();

@@ -1,6 +1,10 @@
 <?php
 // 应用公共文件
 
+function p($var){
+    dump($var);
+}
+
 //日志
 /**
  * @param $str
