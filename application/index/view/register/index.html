@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>注册</title>
+    <link rel="stylesheet" href="__STATIC__/qiantai/css/style.css" />
+    <link rel="stylesheet" href="__STATIC__/qiantai/css/font.css" />
+    <script type="text/javascript" src="__STATIC__/qiantai/js/jquery.js" ></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/layer_mobile.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/layer.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/common.js"></script>
+</head>
+<body style="background: url(__STATIC__/qiantai/img/back.jpg);width: 100vw;height: 100vh;background-size: 100% 100%;">
+<div class="login rst">
+    <h2>注 册</h2>
+    <form>
+        <div class="locgin_i">
+            <i class="iconfont icon-wo"></i>
+            <input type="text" placeholder="账号" name="username" />
+        </div>
+        <div class="locgin_i">
+            <i class="iconfont icon-mima1"></i>
+            <input type="password" placeholder="密码"  name="password"/>
+        </div>
+        <div class="locgin_i">
+            <div>
+                <ul class="ulist">
+
+                    <li class="group">
+                        <label class="label" for="phone"></label>
+                        <div class="controls">
+                            <i class="iconfont icon-shoujihaoma"></i>
+                            <input type="number" placeholder="手机号码" id="phone" class="txt" name="phone">
+                        </div>
+                    </li>
+                    <li class="group">
+                        <div class="controls">
+                            <i class="iconfont icon-yanzhengma1"></i>
+                            <input type="number" placeholder="验证码" id="code" class="txt" name="verify_code">
+                            <a class="btn btn-small get-code" style="width: 32%;height:44px;display: block;position: absolute;margin-top:-44px;right:10%;line-height: 44px;" value="获取验证码" id="J_getCode" />获取验证码</a>
+                            <!--<a class="btn btn-small reset-code" id="J_resetCode" style="display:none;width:30%;height:44px;position: absolute;margin-top:-44px;right:10%;line-height: 44px;font-size: 12px;"><span id="J_second" style="color: #fff;font-size:12px;">60</span>秒后重发</a>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="locgin_i">
+            <i class="iconfont icon-shirenrenzheng"></i>
+            <input type="text" placeholder="真实姓名" name="realname" />
+        </div>
+        <div class="locgin_i">
+            <i class="iconfont icon-wxbzhanghu"></i>
+            <input type="text" placeholder="身份证号码"  name="id_card"/>
+        </div>
+        <div class="locgin_i">
+            <i class="iconfont icon-wxbzhanghu"></i>
+            <input type="text" placeholder="资金密码"  name="zijin_pwd"/>
+        </div>
+        <div class="locgin_i">
+            <!--<input type="submit" value="注册"  />-->
+            <input type="button" value="注册">
+        </div>
+        <p><a href="{:url('Login/index')}">已有号，去登录</a></p>
+        <input type="hidden" name="promo_code" value="<?php echo isset($pid)?$pid:'';?>">
+    </form>
+</div>
+<script>
+    $(function(){
+        $("input[type=button]").click(function(){
+            var username = $("input[name=username]").val();
+            var password = $("input[name=password]").val();
+            var phone = $("input[name=phone]").val();
+            var verify_code = $("input[name=verify_code]").val();
+            var real_name = $("input[name=realname]").val();
+            var id_card = $("input[name=id_card]").val();
+            var zijin_pwd = $("input[name=zijin_pwd]").val();
+            var pid = $("input[name=promo_code]").val();
+            if(username.match(/^[a-zA-Z0-9_]{5,11}$/) == null){
+                layer_alert('请输入账号');
+                return false;
+            }
+            if(password.match(/^[a-zA-Z0-9]{6,10}$/) == null){
+                layer_alert('请输入带数字或字母和6到10位的密码');
+                return false;
+            }
+            if(verify_code.match(/^\d{6}$/) == null){
+                layer_alert('请输入验证码');
+                return false;
+            }
+            if(real_name.match(/^[\u4E00-\u9FA5A-Za-z]+$/)==null){
+                layer_alert("请填写真实姓名");
+                return false;
+            }
+            var id_code_reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if( !id_code_reg.test(id_card) ){
+                layer_alert("请填写正确身份证号");
+                return false;
+            }
+            $.ajax({
+                type:'POST',
+                url:"{:url('Register/register')}",
+                dataType:'json',
+                data:{
+                    username: username,
+                    password: password,
+                    phone: phone,
+                    verify_code: verify_code,
+                    real_name: real_name,
+                    id_card: id_card,
+                    pid:pid,
+                    zijin_pwd:zijin_pwd
+                },
+                success:function(data){
+//                    console.log(data);
+//                    return;
+                    if(data == null){
+                        layer_alert('服务器错误');
+                    }
+                    if(data.status != 0){
+                        layer_alert(data.msg);
+                    }
+                    layer.open({
+                        content: data.msg
+                        ,style: 'color:#ffffff;border:none;'
+                        ,time: 2 //2秒后自动关闭
+                        ,end:function(){
+                            location.href = '{:url("Index/index")}';
+                        }
+                    });
+                },
+                error:function(xhr, status, error) {
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
+                }
+            });
+        });
+    })
+
+
+
+    $('#J_getCode').click(function(){
+        var timer = null, num =60;
+        var phone = $('#phone').val();
+        if(""==phone || !phone){
+            layer_alert("请输入手机号");
+            return false;
+        }else{
+            var reg=/^0?1[3|4|5|7|8][0-9]\d{8}$/;
+            if(!reg.test(phone)){
+                layer_alert("手机号格式错误");
+                return false;
+            }
+        }
+        $.ajax({
+            type:'POST',
+            url:'{:url("Register/reg_code")}',
+            dataType:'json',
+            data:{phone:phone},
+            success:function(data){
+                if(data == null){
+                    layer_alert('服务器错误');
+                }
+                if(data.status != 0){
+                    layer_alert(data.msg);
+                }
+                layer_alert('短信验证已发送,请稍等');
+            },
+            error:function(xhr, status, error) {
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
+            }
+        });
+    });
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>注册</title>
+    <link rel="stylesheet" href="__STATIC__/qiantai/css/style.css" />
+    <link rel="stylesheet" href="__STATIC__/qiantai/css/font.css" />
+    <script type="text/javascript" src="__STATIC__/qiantai/js/gVerify.js" ></script>
+    <script type="text/javascript" src="__STATIC__/qiantai/js/jquery-1.11.3.min.js" ></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/layer_mobile.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/layer.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/common.js"></script>
+</head>
+<style>
+    .button {
+        background: #3cb672 !important;
+        border: 0px;
+        margin-bottom: 20px;
+        margin-top: 10%;
+    }
+    .layui-m-layercont{color:#fff;font-size: 1.1em}
+</style>
+<body style="background: url(__INDEX__/img/login.jpg);width: 100vw;height: 100vh;background-size: 100% 100%;">
+<div class="login rst">
+    <h2>忘记密码</h2>
+    <form action="" method="post">
+        <div class="locgin_i">
+            <i class="iconfont icon-wo"></i>
+            <input type="text" id="account" name="username" placeholder="用户名" value="{$account ? $account : ''}" {$account? 'disabled' : ''} /><span></span>
+        </div>
+        <div class="locgin_i">
+            <i class="iconfont icon-mima1"></i>
+            <input type="password" id="pwd" name="pwd" placeholder="新密码" /><span></span>
+        </div>
+        <div class="locgin_i">
+            <div>
+                <ul class="ulist">
+
+                    <li class="group">
+                        <div class="controls">
+                            <i class="iconfont icon-yanzhengma1"></i>
+                            <input type="text" name="forget_code" placeholder="验证码" id="code" class="txt"><span></span>
+                            <a class="btn btn-small get-code" style="width: 32%;height:44px;display: block;position: absolute;margin-top:-44px;right:10%;line-height: 44px;" value="获取验证码" id="J_getCode" />获取验证码</a>
+                            <!--<a class="btn btn-small reset-code" id="J_resetCode" style="display:none;width:30%;height:44px;position: absolute;margin-top:-44px;right:10%;line-height: 44px;font-size: 12px;"><span id="J_second" style="color: #fff;font-size:12px;">60</span>秒后重发</a>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="locgin_i">
+            <input type="button" value="立即提交" id="submitReg" style="width:100%;background:#f9e80c !important;border:0px;margin-bottom:20px;margin-top:10%;height:40px;color:red;"/>
+        </div>
+        <a href='{:url("Login/index")}'>已有号，去登录</a>
+    </form>
+</div>
+<script>
+
+    $("#J_getCode").click(function(){
+
+        var timer=null,num=60;
+        var username= $('#username').val();
+        if ( "" == account || !username) {
+            layer_alert("请输入账号!");
+            return false;
+        }
+        $.ajax({
+            type: 'POST',
+            url: '{:url("Login/get_forget_code")}',
+            dataType: 'json',
+            data: {username: username},
+            success: function (data) {
+                if( data.result == 0 ){
+                    $("#account").attr("disabled","disabled");
+                    layer_alert(data.msg);
+                    timer = setInterval(function(){
+
+                        $(".get-code").attr("disabled",true);
+                        $(".get-code").text(num+"s"+"重新发送");
+                        if(num < 0){
+                            $(".get-code").text("获取验证码 ");
+                            $(".get-code").removeAttr("disabled");
+                            clearInterval(timer);
+                        }
+                        num--;
+                    },1000);
+                }else{
+                    layer_alert(data.msg);
+                }
+            }
+        });
+    });
+
+
+    $("#submitReg").click(function(){
+
+        var account = $("#account").val();
+        var forget_code = $("#code").val();
+        var pwd = $("#pwd").val();
+        if ( "" == forget_code || !forget_code) {
+            layer_alert("请输入6位数的手机验证码!");
+            return false;
+        }
+        if ( "" == pwd || !pwd) {
+            layer_alert("请输入新的密码!");
+            return false;
+        }
+        $.ajax({
+            type: 'POST',
+            url: '{:url("Login/forget_pas")}',
+            dataType: 'json',
+            data: {username: username,forget_code:forget_code,password:password},
+            success: function (data) {
+                if( data.result == 0 ){
+                    location.href = '{:url("Index/index")}';
+                }else{
+                    layer_alert(data.msg);
+                }
+            }
+        });
+    });
+
+
+    function layer_alert(src){
+        layer.open({
+            content: src
+            ,style: 'color:#fff;background-color:#da7276; border:none;'
+            ,time: 2 //2秒后自动关闭
+        });
+    }
+
+</script>
+</body>
+</html>

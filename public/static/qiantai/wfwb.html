@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>我的银行卡</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="js/need/layer.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script type="text/javascript" src="js/layer/layer.js" ></script>
+	</head>
+	<style>
+		.wfwb ul li{width: 90%;margin: auto;padding: 5%;background:#008FE0;border-radius: 5px;box-sizing: border-box;margin-top:10px;box-shadow:3px 3px 8px #ccc;}
+		.wfwb ul li p{text-align: center;color: #fff;font-size:25px;margin-top:10px;}
+		.wfwb ul li .xiangx span{font-size: 20px;color: #fff;}
+		.wfwb ul li .xiangx>i{font-style:normal;color: #fff;margin-left: 10px;font-weight: 300;}
+		.wfwb ul li .xiangx a{float: right;}
+		.wfwb ul li .xiangx a i{color: #fff;}
+		.tianjian{display: block;width: 90%;margin: auto;background:#f4f4f4;padding: 5%;border-radius: 5px;box-sizing: border-box;box-shadow:3px 3px 8px #ccc;margin-top:20px;}
+		.tianjian i{font-size: 20px;text-align: center;display: block;margin: auto;}
+	</style>
+	<body>
+		<h1 class="h1">我的银行卡</h1>
+		<div class="wfwb">
+			<ul>
+				<li class="dom">
+					<div class="xiangx">
+						<span>工商银行1</span>
+						<i>储蓄卡</i>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-lajixiang"></i></a>
+					</div>
+					<p>5454 1236 5874 5247</p>
+				</li>
+				<li class="dom">
+					<div class="xiangx">
+						<span>工商银行2</span>
+						<i>储蓄卡</i>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-lajixiang"></i></a>
+					</div>
+					<p>5454 1236 5874 5247</p>
+				</li>
+				<li class="dom">
+					<div class="xiangx">
+						<span>工商银行3</span>
+						<i>储蓄卡</i>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-lajixiang"></i></a>
+					</div>
+					<p>5454 1236 5874 5247</p>
+				</li>
+				<li class="dom">
+					<div class="xiangx">
+						<span>工商银行4</span>
+						<i>储蓄卡</i>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-lajixiang"></i></a>
+					</div>
+					<p>5454 1236 5874 5247</p>
+				</li>
+				
+			</ul>
+			<a class="tianjian" href="card_b.html">
+				<i class="iconfont icon-jiahao">添加银行卡</i>
+			</a>
+		</div>
+		<div id="footer"></div>
+		<script>
+		
+			$(".shanchu").click(function(){
+				$(this).parent().parent().remove();				
+			});
+			
+		</script>
+	</body>
+</html>

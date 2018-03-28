@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="js/swiper.min.js"></script>
+	
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/public.js" ></script>
+	<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/css.css">
+	<style>
+		.content dl dd p{width: 100%;background: #007AFF;clear:both;text-align: center;color: #fff;padding: 5px;margin-top:5px;box-sizing: border-box;border-radius: 5px;}
+		.gouwu{position: fixed;right: 0px;top:30vh;background: #007AFF;color: #fff;padding: 5px;text-align: center;border: 1px solid #333;}
+	    .icon-gouwuche{font-size: 20px !important;}
+		.gouwu p{color: #fff;}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+    <div class="content">
+    	<h5 style="font-size: 20px;border-bottom: 1px solid #ccc;padding-bottom: 10px;">升级区</h5>
+    	<a href="goods_t.html" class="gouwu iconfont icon-gouwuche"><p>购物车</p></a>
+    	<dl>
+    		<dd><a href="javascript:;">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div style="overflow: hidden;">
+    			<h6>1万产品包</h6>
+    			<span>￥9999.99</span><em>10已售</em>
+    			</div>
+    			<P>加入购物车</P>
+    		</a></dd>
+    		<dd><a href="javascript:;">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div style="overflow: hidden;">
+    			<h6>1万产品包</h6>
+    			<span>￥9999.99</span><em>10已售</em>
+    			</div>
+    			<P>加入购物车</P>
+    		</a></dd>
+    		<dd><a href="javascript:;">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div style="overflow: hidden;">
+    			<h6>1万产品包</h6>
+    			<span>￥9999.99</span><em>10已售</em>
+    			</div>
+    			<P>加入购物车</P>
+    		</a></dd>
+    		<dd><a href="javascript:;">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div style="overflow: hidden;">
+    			<h6>1万产品包</h6>
+    			<span>￥9999.99</span><em>10已售</em>
+    			</div>
+    			<P>加入购物车</P>
+    		</a></dd>
+    		<dd><a href="javascript:;">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div style="overflow: hidden;">
+    			<h6>1万产品包</h6>
+    			<span>￥9999.99</span><em>10已售</em>
+    			</div>
+    			<P>加入购物车</P>
+    		</a></dd>
+    		<dd><a href="javascript:;">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div style="overflow: hidden;">
+    			<h6>1万产品包</h6>
+    			<span>￥9999.99</span><em>10已售</em>
+    			</div>
+    			<P>加入购物车</P>
+    		</a></dd>
+    	</dl>
+    </div>
+		
+		  <span class="draggable"></span>
+		  <div class="qb">
+		  		<i><a href="index.html"><img src="img/fk_1.png"/></a></i>
+		  </div>
+	</div>
+
+    <div id="footer"></div>
+  <script type="text/javascript" src="js/draggabilly.pkgd.min.js"></script>
+	
+    <script>
+   $(document).ready(function(){
+   		$(".draggable").click(function(){
+    		$(".qb").animate({top:'0px'})
+    	});
+   });
+   $(function(){
+		$('.draggable').draggabilly({ containment: true });
+		
+	});
+    
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    </script>
+
+</body>
+</html>

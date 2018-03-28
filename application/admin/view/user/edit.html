@@ -1,0 +1,88 @@
+{extend name="public:base" /}
+
+{block name="content"}
+<div style="width: 500px;height: 450px; padding-top: 30px">
+    <div id="from" class="layui-form" data-url='{:url("User/edit")}' >
+        <input type="hidden" name="id" id="id" value="{$data.id}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="nickname" id="nickname" lay-verify="required" autocomplete="off" class="layui-input" value="{$data.nickname ? $data.nickname:''}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="account" id="account" lay-verify="required" autocomplete="off" class="layui-input" value="{$data['account']? $data['account'] : ''}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">手机</label>
+            <div class="layui-input-inline">
+                <input type="text" name="mobile" id="mobile" autocomplete="off" class="layui-input" value="{$data.mobile ? $data.mobile:''}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="javascript"}
+
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            sort: function(value){
+                if( value == "" || 0 > parseInt(value) || parseInt(value) > 99 ){
+                    return '请输入排序1到99数字';
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            var url = $("#from").attr("data-url");
+            var id = $("#id").val();
+            var nickname = $("#nickname").val();
+            var account = $("#account").val();
+            var mobile = $("#mobile").val();
+            $.ajax({
+                type: 'POST',
+                url: url,
+                dataType: 'json',
+                data: {
+                    id: id,
+                    nickname: nickname,
+                    account: account,
+                    mobile: mobile
+                },
+                success: function (data) {
+                    if( data.result == 0 ){
+                        alert(data.msg);
+                        window.location.href='{:url("User/index")}';
+                    }else{
+                        alert(data.msg);
+                    }
+                }
+            });
+
+            return false;
+        });
+
+    });
+
+</script>
+{/block}

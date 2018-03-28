@@ -1,0 +1,82 @@
+{extend name="public:base" /}
+{block name="content"}
+
+    <button class="layui-btn layui-btn-normal" onclick="addModule()">添加角色</button>
+    <table class="layui-table">
+        <colgroup>
+            <col width="100">
+            <col width="200">
+            <col width="200">
+            <col width="200">
+        </colgroup>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>角色名称</th>
+            <th>排序</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {foreach $list as $v}
+            <tr>
+                <td>{$v->id}</td>
+                <td>{$v->name}</td>
+                <td>
+                    <input type="text" value="{$v->sort}" style="width: 60px;" onblur="saveSingleVal(this,{$v->id})" data-url='{:url("Role/saveSort")}'>
+                </td>
+                <td>
+                    <div class="layui-table-cell laytable-cell-1-10">
+                        <a class="layui-btn layui-btn-mini" onclick="editModule({$v->id})" lay-event="edit">编辑</a>
+                        <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,{$v->id})" data-url='{:url("Role/delete")}'>删除</a>
+                    </div>
+                </td>
+            </tr>
+        {/foreach}
+        </tbody>
+    </table>
+{/block}
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    function addModule(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+
+             layer.open({
+                 title:"角色添加",
+                 type: 2,
+                 area: ['500px', '300px'],
+                 content: ['{:url("Role/add")}', 'no'],
+                 end: function () {
+                     location.reload();
+                 }
+            });
+        });
+    }
+
+    function editModule(a){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.open({
+                title:"角色编辑",
+                type: 2,
+                area: ['500px', '300px'],
+                content: ['/admin/Role/edit?id='+a, 'no'],
+                end: function () {
+                    location.reload();
+                }
+            });
+        });
+    }
+
+
+</script>
+
+
+{/block}

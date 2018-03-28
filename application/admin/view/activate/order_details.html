@@ -1,0 +1,211 @@
+{extend name="public:layerbase" /}
+
+{block name="style"}
+
+<style type="text/css">
+    .details{padding: 15px 10px 20px;}
+    .details li{padding-top: 5px;width: 50%;float: left;}
+    .details li span{display: block;float: left;width: 120px;line-height: 25px;text-align: right;}
+    .details li p{display: block;float: left;line-height: 25px;margin-left: 5px}
+    .details .proof{padding-top: 15px;}
+    .details .proof p{font-size: 18px;line-height: 30px;text-align: center;color: red;}
+    .details .proof .img{width: 400px;margin: 0px auto;}
+    .details .proof .img img{display: block;width: 100%;}
+    .details .but{width: 180px; margin: 0px auto;padding-top: 10px;}
+</style>
+
+{/block}
+
+{block name="content"}
+<div class="details">
+
+    <li>
+        <span>订单编号：</span>
+        <p>{$Arr.order_code}</p>
+        <div style="clear: both"></div>
+    </li>
+    <!--<li>-->
+        <!--<span>购买人ID：</span>-->
+        <!--<p>{$Arr.buy_id}</p>-->
+        <!--<div style="clear: both"></div>-->
+    <!--</li>-->
+    <li>
+        <span>激活人ID：</span>
+        <p>{$Arr.user_id}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>套餐名：</span>
+        <p>{$Arr.lv_name}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>套餐等级：</span>
+        <p>{$Arr.level}</p>
+        <div style="clear: both"></div>
+    </li>
+
+    <li>
+        <span>套餐价格：</span>
+        <p>{$Arr.price}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>套餐倍数：</span>
+        <p>{$Arr.times}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>所得积分：</span>
+        <p>{$Arr.integral}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>状态：</span>
+        <p style="color: red">{$Arr.statusName}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>订单类型：</span>
+        <p>激活订单</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>支付类型：</span>
+        <p>{$Arr['pay_type'] == 1 ? '线下' : '线上'}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>下单时间：</span>
+        <p>{$Arr.start_time|date="Y-m-d H:m:s",###}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>支付时间：</span>
+        {if condition="$Arr.pay_time == 0"}
+        <p>&nbsp;</p>
+        {else}
+        <p>{$Arr.pay_time|date="Y-m-d H:m:s",###}</p>
+        {/if}
+        <div style="clear: both"></div>
+    </li>
+    {if condition="$Arr.name != null"}
+    <li style="width: 100%;">
+        <span>收货地址：</span>
+        <p>姓名：{$Arr.name}&nbsp;&nbsp;&nbsp;电话：{$Arr.mobile} &nbsp;&nbsp;&nbsp; 邮编：{$Arr.postcode}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li style="width: 100%;">
+        <span>&nbsp;</span>
+        <p>详细地址：{$Arr.details}</p>
+        <div style="clear: both"></div>
+    </li>
+    {/if}
+    <div style="clear: both"></div>
+    <div class="but">
+        {if condition="$Arr.status == 5"}
+        <button class="layui-btn layui-btn-normal" onclick='order_del("{$Arr.id}")'>删除</button>
+        {elseif condition="$Arr.status == 10"/}
+        <button class="layui-btn layui-btn-normal" onclick='order_puy("{$Arr.id}")'>确认付款</button>
+        {elseif condition="$Arr.status == 15"/}
+        {/if}
+    </div>
+    <div class="proof">
+        <p>打款凭证</p>
+        <div class="img">
+            <a target="_blank" href="{$Arr.proof}">
+                <img src="{$Arr.proof}">
+            </a>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="js"}
+
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    function order_del(id){
+        layer.confirm('确定为删除吗？不可更改！', function(index){
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Activate/order_del")}',
+                dataType: 'json',
+                data: {id: id,status:0},
+                success: function (data) {
+                    layer.close(index);
+                    if( data.result != 0 ){
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                layer.close(index);
+                            }
+                        });
+                    }else{
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                            ,cancel:function(index){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                        });
+                    }
+                }
+            });
+
+        });
+    }
+
+    function order_puy(id){
+        layer.confirm('确定支付了吗？不可更改！', function(index){
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Activate/affirm_puy")}',
+                dataType: 'json',
+                data: {id: id,status:0},
+                success: function (data) {
+                    layer.close(index);
+                    if( data.result != 0 ){
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                layer.close(index);
+                            }
+                        });
+                    }else{
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                            ,cancel:function(index){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    }
+</script>
+
+{/block}

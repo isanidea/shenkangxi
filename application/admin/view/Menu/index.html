@@ -1,0 +1,134 @@
+{extend name="public:base" /}
+{block name="content"}
+<div style="height: 38px;">
+    <div style="float: left;">
+        <button class="layui-btn layui-btn-normal" onclick="addModule()">添加菜单</button>
+    </div>
+    <div style="float: left; padding-left: 30px;">
+        <form class="layui-form" action='{:url("Menu/index")}'>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">模块选择</label>
+                    <div class="layui-input-inline">
+                        <select name="module_id" lay-verify="">
+                            {foreach $moduleList as $v}
+                                <option value="{$v.id}" <?php if( $v['id']== $Arr['module_id'] ){ echo "selected"; } ?> >{$v["name"]}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">是否为导航</label>
+                    <div class="layui-input-inline">
+                        <select name="status" lay-verify="">
+                            <option value="0" {$Arr['status'] == 0 ? 'selected' : ''} >--请选择--</option>
+                            <option value="10" {$Arr['status'] == 10 ? 'selected' : ''} >是</option>
+                            <option value="5" {$Arr['status'] == 5 ? 'selected' : ''}>否</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">确定</button>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <div class="clear"></div>
+</div>
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="150">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>排序</th>
+        <th>菜单名</th>
+        <th>所属模块</th>
+        <th>类名</th>
+        <th>方法名</th>
+        <th>是否为导航</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $list as $v}
+    <tr>
+        <td>{$v["id"]}</td>
+        <td>
+            <input type="text" value="{$v.sort}" style="width: 60px;" onblur="saveSingleVal(this,{$v['id']})" data-url='{:url("Menu/saveSort")}'>
+        </td>
+        <td>{$v.menu_name}</td>
+        <td>{$v.module_name}</td>
+        <td>{$v.controller}</td>
+        <td>{$v.action}</td>
+        <td>{$v.status == 10 ? '是': '否'}</td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a class="layui-btn layui-btn-mini" onclick="editModule({$v['id']})" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,{$v['id']})" data-url='{:url("Menu/delete")}'>删除</a>
+            </div>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+{/block}
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+{block name="javascript"}
+
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+    });
+
+    function addModule(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+
+            layer.open({
+                title:"添加菜单",
+                type: 2,
+                area: ['500px', '480px'],
+                content: ['{:url("Menu/add")}', 'no'],
+                end: function () {
+                    location.reload();
+                }
+            });
+        });
+    }
+
+    function editModule(a){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.open({
+                title:"模块编辑",
+                type: 2,
+                area: ['500px', '480px'],
+                content: ['/admin/Menu/edit?id='+a, 'no'],
+                end: function () {
+                    location.reload();
+                }
+            });
+        });
+    }
+
+</script>
+{/block}

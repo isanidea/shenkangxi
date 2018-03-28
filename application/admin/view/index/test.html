@@ -1,0 +1,50 @@
+{extend name="public:base" /}
+
+
+{block name="html"}
+
+<h1 style="line-height: 100px;font-size: 24px;text-align: center">欢迎登录后台管理</h1>
+<button onclick="addressFuc()" class="layui-btn layui-btn-normal">地址接口</button>
+<button onclick="userAddFuc()" class="layui-btn layui-btn-normal">用户接口</button>
+{/block}
+
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    function addressFuc(){
+
+//        alert("dfsfdsf");
+
+        $.ajax({
+            type: 'POST',
+            url: "https://www.jdacha.com//search",
+            dataType: 'json',
+            data: {url:'https://item.jd.com/13441442653.html',keyword:'可奈雅补水仪'},
+            success: function (da) {
+                console.log(da)
+            }
+        });
+
+    }
+
+    function userAddFuc(){
+
+        $.ajax({
+            type: 'POST',
+            url: "/api/user/add",
+            dataType: 'json',
+            data: {name:"zhangsan",phone:13612929086,district_id:854},
+            success: function (da) {
+                console.log(da)
+            }
+        });
+
+
+    }
+
+</script>
+
+
+{/block}

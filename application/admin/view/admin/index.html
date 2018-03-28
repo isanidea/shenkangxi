@@ -1,0 +1,105 @@
+{extend name="public:base" /}
+{block name="css"}
+<link rel="stylesheet" href="__PUBLIC__/css/adminPage.css"  media="all">
+{/block}
+{block name="content"}
+
+<button class="layui-btn layui-btn-normal" onclick="addAdmin()">添加员工</button>
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="100">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>员工名</th>
+        <th>账号</th>
+        <th>部门</th>
+        <th>手机</th>
+        <th>邮箱</th>
+        <th>登录时间</th>
+        <th>登录IP</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $list as $v}
+    <tr>
+        <td>{$v->id}</td>
+        <td>
+            <a href="">{$v->name}</a>
+        </td>
+        <td>{$v->account}</td>
+        <td>{$v->departmentName}</td>
+        <td>{$v->phone}</td>
+        <td>{$v->email}</td>
+        <td>
+            {$v->last_login_time|date="m-d H:i",###}
+        </td>
+        <td>{$v->last_login_ip}</td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a class="layui-btn layui-btn-mini" onclick="editAdmin({$v->id})" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,{$v->id})" data-url='{:url("Admin/delete")}'>删除</a>
+            </div>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+<div style="text-align: center">
+    {$list->render()}
+    <p>共 <span style="color: #FF5722">{$pagetotal}</span> 条</p>
+</div>
+{/block}
+
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+{block name="javascript"}
+
+<script>
+    function addAdmin(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+
+            layer.open({
+                title:"添加菜单",
+                type: 2,
+                area: ['500px', '480px'],
+                content: ['{:url("Admin/add")}', 'no'],
+                end: function () {
+                    location.reload();
+                }
+            });
+        });
+    }
+
+    function editAdmin(a){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+            layer.open({
+                title:"模块编辑",
+                type: 2,
+                area: ['500px', '480px'],
+                content: ['/admin/Admin/edit?id='+a, 'no'],
+                end: function () {
+                    location.reload();
+                }
+            });
+        });
+    }
+</script>
+
+{/block}

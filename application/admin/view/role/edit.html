@@ -1,0 +1,84 @@
+{extend name="public:layerbase" /}
+
+
+{block name="content"}
+
+
+<div style="width: 500px;height: 150px; padding-top: 30px">
+    <div id="from" class="layui-form" data-url="{$submitUrl}" >
+        <input type="hidden" name="id" value="{$Arr['id']? $Arr['id'] : ''}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">模块名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" lay-verify="required" autocomplete="off" class="layui-input" value="{$Arr['name']? $Arr['name'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-inline">
+                <input type="text" name="sort"  lay-verify="sort" autocomplete="off" class="layui-input" value="{$Arr['sort']? $Arr['sort'] : ''}">
+            </div>
+            <div class="layui-form-mid layui-word-aux">请输入1-99</div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="javascript"}
+
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            sort: function(value){
+                if( value == "" || 0 > parseInt(value) || parseInt(value) > 99 ){
+                    return '请输入排序1到99数字';
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            var url = $("#from").attr("data-url");
+            $.ajax({
+                type: 'POST',
+                url: url,
+                dataType: 'json',
+                data: data.field,
+                success: function (da) {
+                    if( da.result == 0 ){
+                        layer.open({
+                            content: da.msg//
+                            ,yes: function(index, layero){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                            ,cancel:function(index){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                        });
+
+                    }
+                }
+            });
+
+            return false;
+        });
+
+    });
+
+</script>
+{/block}

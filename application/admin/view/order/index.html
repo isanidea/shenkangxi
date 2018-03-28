@@ -1,0 +1,193 @@
+{extend name="public:base" /}
+
+{block name="css"}
+<link rel="stylesheet" href="__PUBLIC__/css/adminPage.css"  media="all">
+{/block}
+
+{block name="content"}
+
+
+
+<div class="screening">
+    <form class="layui-form" action='{:url("Order/index")}' method="get">
+
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">订单编号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="ordernumber"  autocomplete="off" class="layui-input" value="{$Arr['order_code']? $Arr['order_code'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">订单状态</label>
+            <div class="layui-input-inline">
+                <select name="status">
+                    <option value="5"  {$Arr['status'] == 5 ? 'selected' : ''} >已支付</option>
+                    <option value="10" {$Arr['status'] == 10 ? 'selected' : ''}>已发货</option>
+                    <option value="15" {$Arr['status'] == 15 ? 'selected' : ''}>未发货</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" lay-verify="start_time" value="{$Arr['start_time']? $Arr['start_time'] : ''}" name="start_time" id="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
+            </div>
+        </div>
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" name="end_time" value="{$Arr['end_time']? $Arr['end_time'] : ''}" id="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="clear: none;float: left">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">确定</button>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </form>
+</div>
+
+
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="150">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>用户昵称</th>
+        <th>用户账号</th>
+        <th>订单编号</th>
+        <th>购买商品</th>
+        <th>购买数量</th>
+        <th>总金额</th>
+        <th>时间</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {volist name="list" id="li"}
+    <tr>
+        <td>{$li["id"]}</td>
+        <td>{$li["nickname"]}</td>
+        <td>{$li.account}</td>
+        <td>{$li.ordernumber}</td>
+        <td>{$li.name}</td>
+        <td>{$li.number}</td>
+        <td>{$li.total_points}</td>
+        <td>{$li.addtime | date="Y-m-d H:i",###}</td>
+        <td>
+            {if condition="$li.status == 0 "}已删除
+            {elseif condition="$li.status eq 5"/}已支付
+            {elseif condition="$li.status eq 10"/}已发货
+            {else condition="$li.status eq 15/}已完成
+            {/if}
+        </td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                {if condition="$li.status == 5"}
+                <a class="layui-btn layui-btn-danger layui-btn-mini" href='{:url("Order/edit",array("id"=>$li["id"]))}' lay-event="edit">待发货</a>
+                {else condition="$li.status == 10"}<span style="disabled:disabled"></span>
+                <a class="layui-btn layui-btn-primary layui-btn-mini" href='#'  lay-event="edit">待收货</a>
+                {/if}
+                <a class="layui-btn layui-btn-mini" href='{:url("Order/detail",array("id"=>$li["id"]))}'  lay-event="edit">详情</a>
+                <!--<a class="layui-btn layui-btn-danger layui-btn-mini" onclick="saveStatus({$li['id']},{$li['status']})">{$li.status == 10 ? '下线': '上线'}</a>-->
+            </div>
+        </td>
+    </tr>
+    {/volist}
+    </tbody>
+
+</table>
+
+{$page}
+
+{/block}
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    layui.use('table', function(){
+        var table = layui.table;
+        //监听工具条
+        table.on('tool(test)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+
+        });
+    });
+
+    layui.use('form', function(){
+        var form = layui.form;
+        form.verify({
+            start_time: function(value){
+                var  end_time = $("#end_time").val();
+                if( end_time != ""){
+                    if( value == "" ){
+                        return '请选择开始时间';
+                    }
+                }
+            }
+        });
+    });
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //时间选择器
+        laydate.render({
+            elem: '#start_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+        laydate.render({
+            elem: '#end_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+    });
+
+//    //监听提交
+//    $("#formDemo").click(function(){
+//        var  end_time = $("#end_time").val();
+//        $.ajax({
+//            type: 'POST',
+//            url: '{:url("Order/search")}',
+//            dataType: 'json',
+//            data:{end_time: end_time},
+//
+//            success: function (data) {
+//                if( data.result == 0 ){
+//
+//
+//                }
+//            }
+//        });
+//
+//        return false;
+//    });
+
+
+
+
+</script>
+
+{/block}
+

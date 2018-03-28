@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		<!--<script src="js/swiper.min.js"></script>-->
+		
+		<script src="js/jquery.min.js"></script>
+	    <link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/css.css">
+		<link rel="stylesheet" type="text/css" href="css/base.css">
+	</head>
+	<body>
+		 <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/banner_1.jpg"/></div>
+             <div class="swiper-slide"><img src="img/banner_2.jpg"/></div>
+             <div class="swiper-slide"><img src="img/banner_3.jpg"/></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="xxy_content">
+    	<h6>苹果梨子和橙</h6>
+    	<span>价格：￥9999.99</span>    	
+    	<dl>
+    		<dd>库存：30000件</dd>
+    		<dd>销量：50件</dd>
+    		<dd>运费：（包邮）</dd>
+    		
+    	</dl>
+    	 <div class="ljjf">
+    		<a href="javascript::">立即支付</a>
+    	</div>
+    </div>
+    <div class="xxy_xx">
+    	<h6>产品详情</h6>
+    	<img src="img/xxx.jpg"/>
+    </div>
+    <div class="zf">
+    		<div class="zf_z">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<div class="zf_right">
+    				<span>￥9999.99</span>
+    				<em>库存999件</em>
+    				<a href="#" class="gb"><img src="img/gb.png"/></a>
+    			</div>
+    			<div class="slgm">
+    				<span>购买数量</span>
+				  	<input class="addBtn add" type="button" value="+" />
+					<input class="join-money" type="text" value="1">
+					<input class="addBtn min" type="button" value="-" />
+					
+				</div>
+			<a href="jsxx.html">提交</a>
+<script>
+	$(document).ready(function(){
+	$('#footer').load("nav.html")
+});
+</script>
+<script>
+var t = $(".join-money");
+var m = $(".allMoney").text();
+var mm = $(".allMoney");
+$(function(){
+$(".add").click(function() {
+    t.val(parseInt(t.val()) + 1); //点击加号输入框数值加1
+});
+$(".min").click(function(){
+    t.val(parseInt(t.val())-1); //点击减号输入框数值减1
+    if(t.val()<=0){
+        t.val(parseInt(t.val())+1); //最小值为1
+    }
+});
+
+}); 	
+
+</script>
+	
+    		</div>
+    </div>
+   
+    <script>
+
+    
+    $(document).ready(function(){
+    	$(".ljjf").click(function(){
+    		$(".zf").animate({top:'0px'})
+    	});
+    	$(".gb").click(function(){
+    		$(".zf").animate({top:'100vh'})
+    	});
+    });
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    </script>
+  <div id="footer"></div>
+	</body>
+</html>

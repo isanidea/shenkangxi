@@ -1,0 +1,60 @@
+{extend name="public:base" /}
+
+
+{block name="content"}
+
+
+<div style="padding-top: 30px">
+    <div id="from" class="layui-form" data-url="" >
+        {foreach $list as $v}
+            <div class="layui-form-item from-data">
+                <input type="hidden" name="{$v.id}-id" value="{$v['id']? $v['id'] : ''}">
+                <div class="layui-inline">
+                    <label class="layui-form-label">{$v.keyNmae}星平级</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="{$v.id}-val" value="{$v.val}" lay-verify="required" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux">%</div>
+                </div>
+            </div>
+        {/foreach}
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            console.log(data.field);
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Brokerage/edit")}',
+                dataType: 'json',
+                data: data.field,
+                success: function (da) {
+                    prompt_From_one(da.msg);
+                }
+            });
+            return false;
+
+        });
+
+    });
+
+</script>
+{/block}

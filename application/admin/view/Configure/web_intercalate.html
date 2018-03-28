@@ -1,0 +1,66 @@
+{extend name="public:base" /}
+
+
+{block name="content"}
+
+
+<div style="width: 1000px;height: 250px; padding-top: 30px">
+    <div id="from" class="layui-form" data-url='{:url("Configure/save_config")}' >
+
+        {foreach $list as $v}
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 120px;">{$v['info']? $v['info'] : ''}</label>
+            <div class="layui-input-inline">
+                <input type="hidden" name="{$v.id}-id" value="{$v['id']? $v['id'] : ''}">
+                <input style="width: 800px;" type="text" name="{$v.id}-value" lay-verify="required" autocomplete="off" class="layui-input" value="{$v['value']? $v['value'] : ''}">
+            </div>
+        </div>
+        {/foreach}
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="javascript"}
+
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            var url = $("#from").attr("data-url");
+            $.ajax({
+                type: 'POST',
+                url: url,
+                dataType: 'json',
+                data: data.field,
+                success: function (da) {
+                    layer.open({
+                        content: da.msg//
+                        ,yes: function(index, layero){
+                            layer.close(index);
+                        }
+                        ,time:3000
+                    });
+                }
+            });
+
+            return false;
+        });
+
+    });
+
+</script>
+{/block}

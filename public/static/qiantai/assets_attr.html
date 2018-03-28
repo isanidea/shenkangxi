@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>消费套餐</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+    <script src="js/layer/jquery.js"></script>
+    <script src="js/layer/mobile/layer_mobile.js"></script>
+   	<script src="js/layer/mobile/layer.js"></script>
+</head>
+<body>
+	<h1 class="h1">消费套餐订单</h1>
+	<div id="address" style="display: none;">
+      <foreach name="address" item="v">
+            <label href="javascript:;"  class="aas" style="padding: 10px;border:1px solid #eee;box-sizing:border-box;display: block;text-align:left;width: 100%;overflow: hidden;"  onclick="getid();" >
+            	<input name="Fruit" type="radio" />克拉刚GOtohunna焙干克拉刚GOtohunna
+            </label>
+             <label href="javascript:;"  class="aas" style="padding: 10px;box-sizing:border-box;border:1px solid #eee;display: block;text-align:left;width: 100%;overflow: hidden;"  onclick="getid();" >
+            	<input name="Fruit" type="radio" />克拉刚GOtohunna焙干
+             </label>
+             <a href="shdz.html" style="width: 100%;display: block;margin-top:20px;border-radius:5px;background:#008FE0;color: #fff;padding: 10px 0;">添加收获地址</a>
+    </foreach>  
+    </div>
+    
+    <dl class="ddl">
+    	<dt>VIP套餐1 商品</dt>
+    	<dd>避孕套</dd>
+		<dd>震动棒</dd>
+		<dd>春药</dd>
+		<dd>避孕套</dd>
+    </dl>
+    <div class="shxz" onclick="address()" >选择收获地址</div>
+    <div class="jiaqan">总价：99999元</div>
+    <button style="width: 100%;display: block;margin-top:20px;text-align:center;background: #008FE0;color: #fff;padding: 10px 0;border: 0px;">提交</button>
+	<div id="footer"></div>				
+	<script>
+    function address(){
+            var content = $('#address').html();
+			layer.open({
+				title: ['选择收货地址','background-color:#008FE0;color:#fff;height:50px;line-height:50px;'],
+				 style: 'width: auto; height: auto;background-color:#fff',
+				content: content,
+				
+				yes: function(index){
+					
+				}
+			})
+		}
+    </script>
+	<script>
+		
+//商品规格选择
+$(function(){
+	$(".sys_item_spec .sys_item_specpara").each(function(){
+		var i=$(this);
+		var p=i.find("ul>li");
+		p.click(function(){
+			if(!!$(this).hasClass("selected")){
+				$(this).removeClass("selected");
+				i.removeAttr("data-attrval");
+			}else{
+				$(this).addClass("selected").siblings("li").removeClass("selected");
+				i.attr("data-attrval",$(this).attr("data-aid"))
+			}
+			getattrprice() //输出价格
+		})
+	})
+	
+
+})
+
+
+ 	</script>
+</body>
+</html>

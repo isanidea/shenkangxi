@@ -1,0 +1,184 @@
+{extend name="public:base" /}
+
+
+{block name="content"}
+
+
+<div style="padding-top: 30px">
+    <div id="from" class="layui-form" data-url="" >
+
+        <div class="layui-form-item">
+            <input type="hidden" name="id" value="{$Arr['id']? $Arr['id'] : ''}">
+            <label class="layui-form-label">股东分红</label>
+            <div class="layui-input-inline">
+                <input type="text" name="val" lay-verify="required" autocomplete="off" class="layui-input" value="{$Arr['val']? $Arr['val'] : ''}">
+            </div>
+            <div class="layui-form-mid layui-word-aux">%</div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="padding-top: 20px;">
+        <form class="layui-form" action="" method="get">
+
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">公司总业绩</label>
+                <div class="layui-input-inline">
+                    <span style="line-height: 38px;font-size: 20px;color: red;">{$Arr['countPrice']? $Arr['countPrice'] : '0'}元</span>
+                </div>
+            </div>
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">开始时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" lay-verify="start_time" value="{$Arr['start_time']? $Arr['start_time'] : ''}" name="start_time" id="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
+                </div>
+            </div>
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">结束时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" name="end_time" value="{$Arr['end_time']? $Arr['end_time'] : ''}" id="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="clear: none;float: left">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo_get">确定</button>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </form>
+    </div>
+
+    <div style="padding-top: 20px;">
+        <div class="layui-form" >
+
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">股东人数</label>
+                <div class="layui-input-inline">
+                    <span style="line-height: 38px;font-size: 20px;color: red;">{$Arr['count']? $Arr['count'] : '0'}人</span>
+                </div>
+            </div>
+            <input type="hidden" name="val" value="{$Arr['val']? $Arr['val'] : '0'}">
+            <input type="hidden" name="countPrice" value="{$Arr['countPrice']? $Arr['countPrice'] : '0'}">
+            <div class="layui-form-item" style="clear: none;float: left">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo_ajax">分红</button>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div style="padding-top: 20px;">
+        <table class="layui-table">
+            <colgroup>
+                <col width="60">
+                <col width="150">
+                <col width="200">
+                <col width="200">
+                <col width="200">
+                <col width="200">
+                <col width="200">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>手机号</th>
+                <th>等级</th>
+                <th>直推数</th>
+                <th>业绩</th>
+                <th>注册时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            {foreach $list as $v}
+            <tr>
+                <td>{$v["id"]}</td>
+                <td>{$v.realname}</td>
+                <td>{$v.mobile}</td>
+                <td>{$v.level}</td>
+                <td>{$v.zhitui}</td>
+                <td>{$v.results}</td>
+                <td>{$v.addtime|date="Y-m-d H:m:s",###}</td>
+            </tr>
+            {/foreach}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+{/block}
+
+{block name="javascript"}
+
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            start_time: function(value){
+                var  end_time = $("#end_time").val();
+                if( end_time != ""){
+                    if( value == "" ){
+                        return '请选择开始时间';
+                    }
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Brokerage/edit")}',
+                dataType: 'json',
+                data: data.field,
+                success: function (da) {
+                    prompt_From_one(da.msg);
+                }
+            });
+
+            return false;
+        });
+
+        //监听提交
+        form.on('submit(formDemo_ajax)', function(data){
+
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Brokerage/stockholder")}',
+                dataType: 'json',
+                data: data.field,
+                success: function (da) {
+                    prompt_From_one(da.msg);
+                }
+            });
+            return false;
+        });
+
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //时间选择器
+        laydate.render({
+            elem: '#start_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+        laydate.render({
+            elem: '#end_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+    });
+</script>
+{/block}

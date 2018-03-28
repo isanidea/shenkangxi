@@ -1,0 +1,78 @@
+{extend name="public:layerbase" /}
+
+
+{block name="content"}
+
+
+<div style="width: 500px;height: 150px; padding-top: 30px">
+    <div id="from" class="layui-form" data-url="{$submitUrl}" >
+        <div class="layui-form-item">
+            <label class="layui-form-label">新密码</label>
+            <div class="layui-input-inline">
+                <input id="passwd" type="text" name="passwd" lay-verify="required" autocomplete="off" class="layui-input" >
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">确认密码</label>
+            <div class="layui-input-inline">
+                <input type="text" name="passwd"  lay-verify="pas" autocomplete="off" class="layui-input" >
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="javascript"}
+
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            pas: function(value){
+                var passwd = $("#passwd").val();
+                if( value != passwd ){
+                    return '二次密码不一至';
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(formDemo)', function(data){
+            var url = $("#from").attr("data-url");
+            $.ajax({
+                type: 'POST',
+                url: url,
+                dataType: 'json',
+                data: data.field,
+                success: function (da) {
+                    if( da.result == 0 ){
+                        layer.open({
+                            content: da.msg//
+                            ,yes: function(index, layero){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+
+                            }
+                        });
+
+                    }
+                }
+            });
+
+            return false;
+        });
+
+    });
+
+</script>
+{/block}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>后台-登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="__LAYUI__/css/layui.css"  media="all">
+</head>
+<body>
+
+<div style="width: 320px; margin: 50px auto;">
+    <h3 style="line-height: 80px;text-align: center;color: #5e5e5e;font-size: 24px;">欢迎登录管理 </h3>
+    <form id="loginForm" class="m-t" method="post" role="form" action='{:url("Login/login")}'>
+
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-inline">
+                <input type="tel" id="account" name="account" lay-verify="phone" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" id="passwd" name="passwd"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </div>
+    <button type="button" onclick="submitFormFuc()" class="layui-btn layui-btn-normal" style="margin-left: 110px;">登&nbsp;&nbsp;&nbsp;录</button>
+
+
+    </form>
+</div>
+<script src="__PUBLIC__/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script src="__PUBLIC__/layer/layer.js" charset="utf-8"></script>
+<script src="__JS__/common.js" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).keyup(function(event){
+        if(event.keyCode ==13){
+            submitFormFuc();
+        }
+    });
+
+    function submitFormFuc(){
+        var account = $("#account").val();
+        if( account == "" ){
+            layer.alert("请输入用户名");
+            return false;
+        }
+        var passwd = $("#passwd").val();
+        if( account == "" ){
+            layer.alert("请输入密码");
+            return false;
+        }
+        $("#loginForm").submit();
+    }
+
+</script>
+
+</body>
+
+</html>

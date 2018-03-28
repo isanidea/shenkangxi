@@ -1,0 +1,178 @@
+{extend name="public:base" /}
+{block name="css"}
+<link rel="stylesheet" href="__PUBLIC__/css/adminPage.css"  media="all">
+{/block}
+{block name="content"}
+
+<div class="screening">
+    <form class="layui-form" action='{:url("Cash/index")}' method="get">
+
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">卡号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="card_num"  lay-verify="sort" autocomplete="off" class="layui-input" value="{$Arr['order_code']? $Arr['order_code'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">开始时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" lay-verify="start_time" value="{$Arr['start_time']? $Arr['start_time'] : ''}" name="start_time" id="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
+            </div>
+        </div>
+        <div class="layui-form-item" style="clear: none;float: left">
+            <label class="layui-form-label">结束时间</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" name="end_time" value="{$Arr['end_time']? $Arr['end_time'] : ''}" id="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="clear: none;float: left">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">确定</button>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </form>
+</div>
+
+<table class="layui-table">
+    <colgroup>
+        <col width="70">
+        <col width="100">
+        <col width="150">
+        <col width="200">
+        <col width="200">
+        <col width="100">
+        <col width="250">
+        <col width="250">
+        <col width="200">
+        <col width="200">
+        <col width="100">
+        <col width="100">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>提现人</th>
+        <th>开户行</th>
+        <th>开户支行</th>
+        <th>卡号</th>
+        <th>提现金额</th>
+        <th>提现时间</th>
+        <th>打款时间</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+        {volist name="data" id="d"}
+        <tr>
+            <td>{$d.id}</td>
+            <td>{$d.name}</td>
+            <td>{$d.bank}</td>
+            <td>{$d.branch}</td>
+            <td>{$d.card_num}</td>
+            <td>{$d.money}</td>
+            <td>{$d['cash_time'] | date="Y-m-d H:i:s",###}</td>
+            <td>{$d['pay_time'] | date="Y-m-d H:i:s",###}</td>
+            <td>
+                {if condition="$d.status == 0"}<span style="color:#FFAB00;">待审核</span>
+                {elseif condition="$d.status eq 5"/}<span style="color:red;">已驳回</span>
+                {else condition="$d.status eq 10"/}已打款
+                {/if}
+            </td>
+            <td>
+                <div class="layui-table-cell laytable-cell-1-10">
+                    {if condition="$d.status == 0"}
+                        <a onclick="editFuc('{$d.id}',10)" class="layui-btn layui-btn-mini" href='javascript:;' lay-event="edit">已打款</a>
+                        <a onclick="editFuc('{$d.id}',5)" class="layui-btn layui-btn-mini" href='javascript:;' lay-event="del">驳回</a>
+                    {/if}
+                </div>
+            </td>
+        </tr>
+        {/volist}
+    </tbody>
+
+</table>
+{$page}
+{/block}
+
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+{block name="javascript"}
+<script type="text/javascript">
+
+
+
+    layui.use('form', function(){
+        var form = layui.form;
+        form.verify({
+            start_time: function(value){
+                var  end_time = $("#end_time").val();
+                if( end_time != ""){
+                    if( value == "" ){
+                        return '请选择开始时间';
+                    }
+                }
+            }
+        });
+    });
+
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //时间选择器
+        laydate.render({
+            elem: '#start_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+        laydate.render({
+            elem: '#end_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+    });
+
+    function editFuc(cid,status){
+        if( status == 10 ){
+            var str = "确定要打款了吗？";
+        }else{
+            var str = "确定要驳回吗？";
+        }
+        layui.use("layer",function(){
+            var layer = layui.layer;
+            layer.open({
+                content: str//
+                ,yes: function(index, layero){
+                    $.ajax({
+                        type: 'POST',
+                        url: '{:url("Cash/edit")}',
+                        dataType: 'json',
+                        data: {id: cid,status:status},
+                        success: function (data) {
+                            layer.close(index);
+                            if( data.result == 0 ){
+                                layer.open({
+                                    content: data.msg//
+                                    ,yes: function(index, layero){
+                                        location.reload();
+                                    }
+                                });
+                            }else{
+                                prompt_From_one(data.msg);
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+    }
+
+
+</script>
+
+{/block}

@@ -1,0 +1,41 @@
+{extend name="public:base" /}
+{block name="css"}
+
+<style type="text/css">
+    .record ul li h2 i{font-style: normal;color: #ff2d17}
+    .order-bt{line-height: 25px;height: 25px;padding-top: 5px}
+    .order-bt a{float: left;margin-right: 20px;display: block;line-height: 25px;width: 60px; text-align: center;background-color: #1E9FFF;color: #fff; border-radius: 5px;}
+    li a{width: 100px;display: block;float: right;position: relative;text-align: center;background: #008FE0;color: #fff;border-radius: 5px;padding: 5px 0;clear: both}
+</style>
+
+{/block}
+
+{block name="content"}
+
+<div class="record">
+    <h1 class="h1">购买商品记录</h1>
+    <ul>
+
+        {volist name="data" id="d"}
+        <li>
+            <p>商品：<u>{$d.pname}</u>
+                {if condition="$d.status==5"}<span style="color:#FFBF05;">驳回</span>
+                {elseif condition="$d.status eq 10"}<span style="color:#FF1400;">待上传</span>
+                {elseif condition="$d.status eq 15"}<span style="color:#8209FF;">待发货</span>
+                {elseif condition="$d.status eq 20"}<span style="color:#8209FF;">已发货</span>
+                {/if}</p>
+            <p>价格:{$d.total_price}元</p>
+            <span>{$d.buy_time|date="Y-m-d H:m:s",###}</span>
+            {if condition="$d.status==10 or $d.status==15"}
+            <a href='{:url("Order/proof",array("id"=>$d.id))}'>上传凭证</a>
+            {/if}
+        </li>
+        {/volist}
+
+    </ul>
+</div>
+
+{/block}
+
+
+

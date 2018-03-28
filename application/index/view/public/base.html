@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>{$titleName}</title>
+    <link rel="stylesheet" href="__STATIC__/qiantai/css/style.css"/>
+    <link rel="stylesheet" href="__STATIC__/qiantai/css/font.css"/>
+    <script type="text/javascript" src="__STATIC__/qiantai/js/gVerify.js"></script>
+    <script type="text/javascript" src="__STATIC__/qiantai/js/jquery-1.11.3.min.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/layer_mobile.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/layer.js"></script>
+    <script src="__STATIC__/qiantai/js/layer/mobile/common.js"></script>
+    <style>
+        .sb_4 {
+            color: #007AFF;
+        }
+
+        .sb_4 span {
+            color: #007AFF;
+        }
+    </style>
+    {block name="css"}{/block}
+</head>
+<body>
+{block name="content"}
+
+
+{/block}
+    <div style="height: 50px;"></div>
+    <div class="bottom_nav">
+        <dl>
+            <!--<dd><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"><span>返回上一级</span></button></dd>-->
+            <dd><a href="{:url('index/package/index')}" class="iconfont icon-jiaoyi sb_1"><span>升级区</span></a></dd>
+            <dd><a href="{:url('index/product/index')}" class="iconfont icon-qiandaizi sb_2"><span>积分商城</span></a></dd>
+            <dd><a href="{:url('index/good/index')}" class="iconfont icon-dianpufill sb_3"><span>消费商城</span></a></dd>
+            <dd><a href="{:url('index/user/index')}" class="iconfont icon-wodefill sb_4"><span>个人中心</span></a></dd>
+        </dl>
+    </div>
+{block name="js"}{/block}
+</body>
+</html>

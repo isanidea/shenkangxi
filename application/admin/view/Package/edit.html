@@ -1,0 +1,232 @@
+{extend name="public:base" /}
+{block name="css"}
+<style type="text/css">
+    .hide{display: none}
+</style>
+{/block}
+
+{block name="content"}
+
+{if condition="$packageList neq null"}
+    <form class="layui-form" method="get"  action='{:url("Package/edit")}'>
+        <div class="layui-form-item">
+            <label class="layui-form-label">模块选择</label>
+            <div class="layui-input-inline">
+                <select name="id" lay-verify="required">
+                    {foreach $packageList as $v}
+                    <option value="{$v.id}" >{$v["lv_name"]}</option>
+                    {/foreach}
+                </select>
+            </div>
+            <button type="submit" class="layui-btn" lay-filter="formDemo">立即提交</button>
+        </div>
+    </form>
+{/if}
+
+
+<div class="{$packageList?='hide'}" style="width: 800px; padding-top: 30px;">
+    <form method="post" class="layui-form" action='{$submitUrl}' enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$Arr['id'] ? $Arr['id'] : 0}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">套餐名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="lv_name" lay-verify="required" autocomplete="off" class="layui-input" value="{$Arr['lv_name']? $Arr['lv_name'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">套餐等级</label>
+            <div class="layui-input-inline">
+                <input type="text" name="level"  lay-verify="level" autocomplete="off" class="layui-input" value="{$Arr['level']? $Arr['level'] : ''}">
+            </div>
+            <div class="layui-form-mid layui-word-aux">请输入1-6</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">产品名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" lay-verify="required" autocomplete="off" class="layui-input" value="{$Arr['name']? $Arr['name'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">产品说明</label>
+            <div class="layui-input-block">
+                <input type="text" name="explain"  lay-verify="required" autocomplete="off" class="layui-input" value="{$Arr['explain']? $Arr['explain'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">价格</label>
+            <div class="layui-input-inline">
+                <input type="text" name="price"  lay-verify="required|number" autocomplete="off" class="layui-input" value="{$Arr['price']? $Arr['price'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">倍数</label>
+            <div class="layui-input-inline">
+                <input type="text" name="times"  lay-verify="number" autocomplete="off" class="layui-input" value="{$Arr['times']? $Arr['times'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">释放比例</label>
+            <div class="layui-input-inline">
+                <input type="text" name="release"  lay-verify="number" autocomplete="required" class="layui-input" value="{$Arr['release']? $Arr['release'] : ''}">
+            </div>
+            <div class="layui-form-mid layui-word-aux">单位 千分之</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-inline">
+                <input type="text" name="sort"  lay-verify="sort" autocomplete="off" class="layui-input" value="{$Arr['sort']? $Arr['sort'] : ''}">
+            </div>
+            <div class="layui-form-mid layui-word-aux">请输入1-99</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否上线</label>
+            <div class="layui-input-inline">
+                <select name="status">
+                    <option value="5" {$Arr['status'] == 5 ? 'selected' : ''}>下线</option>
+                    <option value="10" {$Arr['status'] == 10 ? 'selected' : ''} >上线</option>
+                </select>
+            </div>
+        </div>
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">产品图片</label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<input type="file"  name="img" id="upfile" value="" style="display: none" onchange="PreviewImage(this,imge)">-->
+                <!--<input class="layui-btn" type="button" value="上传图片" onclick="document.getElementById('upfile').click()">-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label"></label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<img id="imge" src="{$Arr['img']? $Arr['img'] : ''}" width="100" height="100" onclick="document.getElementById('upfile').click()">-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">产品图片</label>
+            <div class="layui-input-inline">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="test1">上传图片</button>
+                    <div class="layui-upload-list">
+                        <img src="{$Arr['img']? $Arr['img'] : ''}" class="layui-upload-img" id="demo1" width="100px" height="100px">
+                        <p id="demoText"></p>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="fileImg" name="img" value="{$Arr['img']? $Arr['img'] : ''}">
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">产品详情</label>
+            <div class="layui-input-block">
+                <textarea name="details" id="editor" type="text/plain"   style="height: 600px; width: 100%">{$Arr['details']? $Arr['details'] : ''}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+<script charset="utf-8" src="__JS__/ueditor/ueditor.config.js"></script>
+<script charset="utf-8" src="__JS__/ueditor/ueditor.all.min.js"></script>
+<script charset="utf-8" src="__JS__/ueditor/lang/zh-cn/zh-cn.js"></script>
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            level: function(value){
+                if( value == "" || 0 > parseInt(value) || parseInt(value) > 6 ){
+                    return '请输入等级1到5数字';
+                }
+            },
+            sort: function(value){
+                if( value == "" || 0 > parseInt(value) || parseInt(value) > 99 ){
+                    return '请输入排序1到99数字';
+                }
+            }
+        });
+
+//        //监听提交
+//        form.on('submit(formDemo)', function(data){
+//            var url = $("#from").attr("data-url");
+//            $.ajax({
+//                type: 'POST',
+//                url: url,
+//                dataType: 'json',
+//                data: data.field,
+//                success: function (da) {
+//                    if( da.result == 0 ){
+//                        prompt_From_one("编辑成功！");
+//                    }else{
+//                        prompt_From_one("编辑失败！");
+//                    }
+//                }
+//            });
+//            return false;
+//        });
+
+    });
+
+
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: '{:url("Package/up_image")}' //上传接口
+            ,done: function(res){
+                if(res.code == 0){
+                    var da = res.msg;
+                    $('#demo1').attr('src', da.imgUrl); //图片链接（base64）
+                    $("#fileImg").val(da.imgUrl);
+                }else{
+                    return layer.msg('上传失败');
+                }
+            }
+
+        });
+    });
+
+    $(document).ready(function() {
+
+        ue = UE.getEditor('editor', {
+            autoHeightEnabled: false, toolbars: [
+                [
+                    'fullscreen',
+                    'source',
+                    'undo',
+                    'redo',
+                    'bold',
+                    'indent',
+                    'snapscreen',
+                    'simpleupload', //单图上传
+                    'insertimage',
+                    'justifyleft', //居左对齐
+                    'justifyright', //居右对齐
+                    'justifycenter', //居中对齐
+                    'justifyjustify', //两端对齐
+                    'forecolor', //字体颜色
+                    'backcolor', //背景色
+                    'link', //超链接
+                    'emotion', //表情
+                ]
+
+            ]
+        });
+    });
+</script>
+{/block}

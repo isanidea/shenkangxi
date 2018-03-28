@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>注册</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery.js" ></script>
+</head>
+<body style="background: url(img/back.jpg);width: 100vw;height: 100vh;background-size: 100% 100%;">
+	<div class="login rst">
+		<h2>忘记密码</h2>
+		<form>
+			<div class="locgin_i">
+				<i class="iconfont icon-wo"></i>
+				<input type="text" placeholder="账号" />
+			</div>
+			<div class="locgin_i">
+				<div>
+					<ul class="ulist">
+						
+						<li class="group">
+							<label class="label" for="phone"></label>
+							<div class="controls">
+							<i class="iconfont icon-shoujihaoma"></i>
+							<input type="number" placeholder="手机号码" id="phone" class="txt">
+							</div>
+						</li>
+						<li class="group">
+						<div class="controls">
+						<i class="iconfont icon-yanzhengma1"></i>
+						<input type="number" placeholder="验证码" id="code" class="txt">
+						<a class="btn btn-small get-code" style="width: 32%;height:44px;display: block;position: absolute;margin-top:-44px;right:10%;line-height: 44px;" value="获取验证码" onclick="getCode(this)" id="J_getCode" />获取验证码</a>
+						<a class="btn btn-small reset-code" id="J_resetCode" style="display:none;width:30%;height:44px;position: absolute;margin-top:-44px;right:10%;line-height: 44px;font-size: 12px;"><span id="J_second" style="color: #fff;font-size:12px;">60</span>秒后重发</a>
+						</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-mima1"></i>
+				<input type="password" placeholder="新密码" />
+			</div>
+			<div class="locgin_i">
+				<i class="iconfont icon-mima1"></i>
+				<input type="password" placeholder="确认新密码" />
+			</div>
+			<div class="locgin_i">
+				<input type="submit" value="立即找回"  />
+			</div>
+			<p><a href="login.html">去登录</a></p>
+		</form>
+	</div>
+	<script>
+		/*获取验证码*/
+var isPhone = 1;
+function getCode(e){
+	checkPhone(); //验证手机号码
+	if(isPhone){
+		resetCode(); //倒计时
+	}else{
+		$('#phone').focus();
+	}
+	
+}
+//验证手机号码
+function checkPhone(){
+	var phone = $('#phone').val();
+	var pattern = /^1[0-9]{10}$/;
+	isPhone = 1;
+	if(phone == '') {
+		alert('请输入手机号码');
+		isPhone = 0;
+		return;
+	}
+	if(!pattern.test(phone)){
+		alert('请输入正确的手机号码');
+		isPhone = 0;
+		return;
+	}
+}
+//倒计时
+function resetCode(){
+	$('#J_getCode').hide();
+	$('#J_second').html('60');
+	$('#J_resetCode').show();
+	var second = 60;
+	var timer = null;
+	timer = setInterval(function(){
+		second -= 1;
+		if(second >0 ){
+			$('#J_second').html(second);
+		}else{
+			clearInterval(timer);
+			$('#J_getCode').show();
+			$('#J_resetCode').hide();
+		}
+	},1000);
+}
+	</script>
+</body>
+</html>

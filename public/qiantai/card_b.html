@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>银行卡绑定</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+</head>
+<body>
+	<div class="tixian">
+		<h1 class="h1">银行卡绑定</h1>
+		<input type="number" placeholder="输入绑定银行卡号" />
+		<input type="text" placeholder="输入银行开户行" />
+		<input type="text" placeholder="输入持卡人姓名" />
+		<div>
+				<ul class="ulist">
+					<li class="group">
+						<label class="label" for="phone"></label>
+						<div class="controls">
+						<input type="number" placeholder="13510001011" disabled="disabled" id="phone" class="txt">
+						</div>
+					</li>
+					<li class="group">
+					<div class="controls">
+					<input type="number" placeholder="验证码" id="code" class="txt">
+					<input type="button" style="width: 100px;margin-top:0px;position: absolute;right: 10%;margin-top: -41px;" class="layui-btn Obtain-yzm pwd_email sendSms" id="btn_s" value="获取验证码" />
+					</div>
+					</li>
+				</ul>
+			</div>
+		<input type="button" value="提交" />
+		<p>温馨提示：绑定的银行卡绑定后不可以更改，请确定后再进行绑定。</p>
+	</div>
+	<div id="footer"></div>
+	<script>
+	var wait=60;  
+			function time(o) {  
+			        if (wait == 0) {  
+			            o.removeAttribute("disabled");            
+			            o.value="获取验证码";  
+			            wait = 60;  
+			        } else {  
+			            o.setAttribute("disabled", true);  
+			            o.value="重新发送(" + wait + ")";  
+			            wait--;  
+			            setTimeout(function() {  
+			                time(o)  
+			            },  
+			            1000)  
+			        }  
+			    }  
+			document.getElementById("btn_s").onclick=function(){time(this);};
+	</script>
+</body>
+</html>

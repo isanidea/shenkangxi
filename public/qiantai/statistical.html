@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>业绩统计</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+</head>
+<style>
+	.u_y{color: #008400;float: right;}
+	.u_w{color: red;float: right;}
+	P{clear: both;padding-top:10px;}
+	p input{opacity: 0;float: right;width: 100px;position: absolute;left: 0px;;}
+	p a{width: 100px;display: block;float: right;position: relative;text-align: center;background: #008FE0;color: #fff;border-radius: 5px;padding: 5px 0;}
+	.tab-title a{width:50%;display: block;float: left;text-align: center;background: #c2c2c2;color: #fff;padding: 10px;box-sizing: border-box;}
+	.tab-title .item-cur{background: #008FE0 !important;}
+	.tab-cont__wrap{padding:10px;box-sizing: border-box;}
+	.tab-title{overflow: hidden;}
+	.item table{width: 100%;border-right:1px solid #ccc;border-bottom:1px solid #ccc;}
+	.item th,.item td{width: 50%;display: block;float: left;text-align: center;box-sizing: border-box;border-left:1px solid #ccc;border-top:1px solid #ccc;padding: 5px;}
+	.item tr{width: 100%;display: block;}
+	.item
+</style>
+<body>
+	
+	<h1 class="h1">业绩统计</h1>
+	<div class="tab" js-tab="1">
+		<div class="tab-title">
+		  <a href="javascript:;" class="item">日统计</a>
+		  <a href="javascript:;" class="item">月统计</a>
+		</div>
+		<div class="tab-cont">
+		  <ul class="tab-cont__wrap">
+				<li class="item">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<th>日期</th>
+							<th>业绩</th>
+						</tr>
+						<tr>
+							<td>1号</td>
+							<td>2121</td>
+						</tr>
+						<tr>
+							<td>2号</td>
+							<td>2121</td>
+						</tr>
+					</table>
+				</li>
+				<li class="item">
+					<table cellpadding="0" cellspacing="0">
+						<tr>
+							<th>日期</th>
+							<th>业绩</th>
+						</tr>
+						<tr>
+							<td>1月</td>
+							<td>2121</td>
+						</tr>
+						<tr>
+							<td>2月</td>
+							<td>2121</td>
+						</tr>
+					</table></li>
+		  </ul>
+		</div>
+	</div>
+	<div id="footer"></div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/tab.js"></script>
+<script>
+$(function () {
+
+  $('[js-tab=1]').tab();
+
+});
+</script>
+
+</body>
+</html>

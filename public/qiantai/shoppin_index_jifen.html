@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>商城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="js/swiper.min.js"></script>
+	
+	<script src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/public.js" ></script>
+	<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/css.css">
+
+</head>
+
+<body>
+	<div class="container">
+	<img style="width: 100%;" src="img/header_jifen.jpg"/>
+    <div class="content">
+    	<h5>积分产品</h5>
+    	<dl>
+    		<dd><a href="xxy.html">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<h6>苹果梨子</h6>
+    			<span>￥9999.99积分</span>
+    		</a></dd>
+    		<dd><a href="#">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<h6>苹果梨子</h6>
+    			<span>￥9999.99积分</span>
+    		</a></dd>
+    		<dd><a href="#">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<h6>苹果梨子</h6>
+    			<span>￥9999.99积分</span>
+    		</a></dd>
+    		<dd><a href="#">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<h6>苹果梨子</h6>
+    			<span>￥9999.99积分</span>
+    		</a></dd>
+    		<dd><a href="#">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<h6>苹果梨子</h6>
+    			<span>￥9999.99积分</span>
+    		</a></dd>
+    		<dd><a href="#">
+    			<i><img src="img/cpt.jpg"/></i>
+    			<h6>苹果梨子</h6>
+    			<span>￥9999.99积分</span>
+    		</a></dd>	
+    	</dl>
+    </div>
+	
+		
+		  <span class="draggable"></span>
+		  <div class="qb">
+		  		<i><a href="index.html"><img src="img/fk_1.png"/></a></i>
+		  </div>
+	</div>
+
+    <div id="footer"></div>
+  <script type="text/javascript" src="js/draggabilly.pkgd.min.js"></script>
+	
+    <script>
+   $(document).ready(function(){
+   		$(".draggable").click(function(){
+    		$(".qb").animate({top:'0px'})
+    	});
+   });
+   $(function(){
+		$('.draggable').draggabilly({ containment: true });
+		
+	});
+    
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    </script>
+
+</body>
+</html>

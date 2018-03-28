@@ -1,0 +1,55 @@
+
+{extend name="public/base"}
+{block name="css"}
+<link rel="stylesheet" href="__STATIC__/qiantai/css/css.css">
+{/block}
+
+{block name="content"}
+<div class="container">
+    <img style="width: 100%;" src="__STATIC__/qiantai/img/header_jifen.jpg"/>
+    <div class="content">
+        <h5>产品升级包</h5>
+        <dl>
+            {volist name="list" id ="v" }
+            <dd><a href="{:url('product/details',array('id'=>$v.id))}">
+                <i><img src=""/>dfafsdf</i>
+                <h6>{$v.product_name}</h6>
+                <span>积分:&nbsp;{$v.sales_jifen}</span>
+            </a></dd>
+            {/volist}
+        </dl>
+    </div>
+
+</div>
+
+<div id="footer"></div>
+{/block}
+{block name="js"}
+<script src="__STATIC__/qiantai/js/swiper.min.js"></script>
+
+<script src="__STATIC__/qiantai/js/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/qiantai/js/draggabilly.pkgd.min.js"></script>
+
+
+
+<script>
+
+
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+
+    });
+</script>
+{/block}
+
+
+
+
+

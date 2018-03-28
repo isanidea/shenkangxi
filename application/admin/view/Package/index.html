@@ -1,0 +1,97 @@
+{extend name="public:base" /}
+{block name="content"}
+
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="150">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>排序</th>
+        <th>套餐等级</th>
+        <th>套餐名</th>
+        <th>价格</th>
+        <th>倍数</th>
+        <th>静态释放</th>
+        <th>状态</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $list as $v}
+    <tr>
+        <td>{$v["id"]}</td>
+        <td>
+            <input type="text" value="{$v.sort}" style="width: 60px;" onblur="saveSingleVal(this,{$v['id']})" data-url='{:url("Package/saveSort")}'>
+        </td>
+        <td>{$v.lv_name}</td>
+        <td>{$v.name}</td>
+        <td>{$v.price}</td>
+        <td>{$v.times}</td>
+        <td>{$v.release}</td>
+        <td>{$v.status == 5 ? '下线': '上线'}</td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a class="layui-btn layui-btn-mini" href='{:url("Package/edit",array("id"=>$v["id"]))}'  lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="saveStatus({$v['id']},{$v['status']})">{$v.status == 10 ? '下线': '上线'}</a>
+            </div>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+
+{/block}
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    function saveStatus(id,status){
+        layui.use("layer",function(){
+            var layer = layui.layer;
+            layer.open({
+                content: "确定要这样操作吗？"//
+                ,yes: function(index, layero){
+                    if( status == 5 ){
+                        var s = 10;
+                    }else{
+                        var s = 5;
+                    }
+                    $.ajax({
+                        type: 'POST',
+                        url: '{:url("Package/save_status")}',
+                        dataType: 'json',
+                        data: {id: id,status:s},
+                        success: function (data) {
+                            layer.close(index);
+                            if( data.result == 0 ){
+                                location.reload();
+                            }else{
+                                prompt_From_one("操作失败");
+                            }
+                        }
+                    });
+                }
+            });
+
+        });
+    }
+
+
+</script>
+
+{/block}

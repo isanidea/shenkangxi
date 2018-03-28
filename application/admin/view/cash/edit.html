@@ -1,0 +1,78 @@
+{extend name="public:base" /}
+{block name="content"}
+
+<!--<div>提现管理->审核设置</div>-->
+    <div style="width: 500px;height:auto; padding-top: 20px">
+        <input type="hidden" name="id" value="{$data.id}" id="id">
+        <div id="from" class="layui-form"  >
+            <div class="layui-form-item">
+                <label class="layui-form-label">审核</label>
+                <div class="layui-input-block">
+                    <select name="status" id="status" lay-verify="required" autocomplete="off" class="layui-input" value="">
+                        <option value="">--请选择--</option>
+                        <option value="5" {$data['status'] == 5 ? 'selected':''}>拒绝</option>
+                        <option value="10" {$data['status'] == 10 ? 'selected':''}>通过</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn"  id="submitSet">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{/block}
+
+{block name="js"}
+<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+{block name="javascript"}
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+            sort: function(value){
+                if( value == "" || 0 > parseInt(value) || parseInt(value) > 99 ){
+                    return '请输入排序1到99数字';
+                }
+            }
+        });
+    });
+
+    $("#submitSet").click(function(){
+        var status = $("#status option:selected").val();
+        var id = $("#id").val();
+//        alert(id);
+        if(status == ''){
+            alert("请选择状态");
+            return false;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: '{:url("Cash/edit")}',
+            dataType: 'json',
+            data: {
+                id: id,
+                status: status
+            },
+            success: function (data) {
+                console.log(data);
+                if( data.result == 0 ){
+                    alert(data.msg);
+                    window.location.href='{:url("Cash/index")}';
+                }else{
+                    alert(data.msg);
+                }
+            }
+        });
+    })
+
+</script>
+{/block}
