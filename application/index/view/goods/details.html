@@ -1,0 +1,85 @@
+{extend name="public/base"}
+{block name="css"}
+<link rel="stylesheet" type="text/css" href="__STATIC__/qiantai/css/css.css">
+{/block}
+{block name="content"}
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="{$data.img}"/></div>
+    </div>
+</div>
+<div class="xxy_content">
+    <h6>{$data.goods_name}</h6>
+    <span>积分：{$data.sales_price}</span>
+    <dl>
+        <dd>销量：50件</dd>
+    </dl>
+    <div class="ljjf">
+        <a href="javascript:;">立即购买</a>
+    </div>
+</div>
+<div class="xxy_xx">
+    <h6>产品详情</h6>
+    <span>{$data.goods_details}</span>
+</div>
+<div class="zf">
+    <div class="zf_z">
+        <i><img src="{$data.img}"/></i>
+        <div class="zf_right">
+            <span>￥:{$data.sales_price}</span>
+        </div>
+        <form id="orderForm" action='{:url("Order/goods_order")}' method="post">
+            <div class="slgm">
+                <span>购买数量</span>
+                <input class="addBtn add" type="button" value="+"/>
+                <input class="join-money" name="count" type="number" value="1">
+                <input class="addBtn min" type="button" value="-"/>
+            </div>
+            <input type="hidden" name="goods_id" value="{$data.goods_id}">
+        </form>
+        <a href='javascript:;' onclick="submitOrderFuc()">提交</a>
+    </div>
+</div>
+{/block}
+{block name="js"}
+<script>
+    var t = $(".join-money");
+    var m = $(".allMoney").text();
+    var mm = $(".allMoney");
+    var tmax = $("#stock").val();
+
+    $(function () {
+        $(".add").click(function () {
+            var v = parseInt(t.val());
+            if (v + 1 > parseInt(tmax)) {
+                t.val(tmax);
+                return false;
+            } else {
+                t.val(parseInt(t.val()) + 1); //点击加号输入框数值加1
+            }
+        });
+        $(".min").click(function () {
+            t.val(parseInt(t.val()) - 1); //点击减号输入框数值减1
+            if (t.val() <= 0) {
+                t.val(parseInt(t.val()) + 1); //最小值为1
+            }
+        });
+    });
+    $(document).ready(function(){
+        $(".ljjf").click(function(){
+            $(".zf").animate({top:'0px'})
+        });
+        $(".gb").click(function(){
+            $(".zf").animate({top:'100vh'})
+        });
+    });
+
+    function submitOrderFuc() {
+        $("#orderForm").submit();
+    }
+
+</script>
+{/block}
+
+
+

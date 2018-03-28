@@ -17,12 +17,17 @@
     <ul>
         {volist name="data" id="d"}
         <li>
-            <p>商品：<u>{$d.product_name}</u>
+            <p>商品：<u>{$d.goods_name}</u>
                 {if condition="$d.status==0"}<span style="color:#FFBF05;">驳回</span>
-                {elseif condition="$d.status eq 1"}<span style="color:#FF1400;">已完结</span>
+                {elseif condition="$d.status eq 1"}<span style="color:#FF1400;">待支付</span>
+                {elseif condition="$d.status eq 5"}<span style="color:#FF1400;">待审核</span>
+                {elseif condition="$d.status eq 6"}<span style="color:#FF1400;">待上传凭证</span>
+                {elseif condition="$d.status eq 10"}<span style="color:#FF1400;">待发货</span>
+                {elseif condition="$d.status eq 11"}<span style="color:#FF1400;">已发货</span>
+                {elseif condition="$d.status eq 12"}<span style="color:#FF1400;">已完结</span>
                 {/if}</p>
-             <p>数量：{$d.product_num}</p>   
-            <p>积分:{$d.total_jifen}</p>
+             <p>数量：{$d.goods_num}</p>   
+            <p>金额:{$d.total_price}</p>
             <span>{$d.add_time|date="Y-m-d H:m:s",###}</span>
         </li>
         {/volist}

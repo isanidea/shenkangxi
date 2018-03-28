@@ -8,13 +8,13 @@
 <div class="container">
     <img style="width: 100%;" src="__STATIC__/qiantai/img/header_jifen.jpg"/>
     <div class="content">
-        <h5>积分商品</h5>
+        <h5>小商店</h5>
         <dl>
             {volist name="list" id ="v" }
-            <dd><a href="{:url('product/details',array('id'=>$v.id))}">
-                <i><img src=""/>dfafsdf</i>
-                <h6>{$v.product_name}</h6>
-                <span>积分:&nbsp;{$v.sales_jifen}</span>
+            <dd><a href="{:url('goods/details',array('id'=>$v.goods_id))}">
+                <i><img src=""/>img</i>
+                <h6>{$v.goods_name}</h6>
+                <span>价格:&nbsp;{$v.sales_price}</span>
             </a></dd>
             {/volist}
         </dl>

@@ -307,7 +307,7 @@ class Order extends  IndexBase
                 $render_json->msg = "订单创建失败";
                 $render_json->tojson();
             }
-        }
+    }
 
     /*
     'order_id' => int 17
@@ -325,11 +325,134 @@ class Order extends  IndexBase
     public function product_order_list(){
 
         $list = Db::name("productOrder")->where(array("status"=>["gt",0],"uid"=>$this->userInfo["id"]))->order('order_id desc')->select();
-
         $this->titleName = "我的商城订单";
         $this->assign("data",$list);
         return $this->fetch();
+
     }
+
+
+    ###################################小商品########################3
+    /*
+      'count' => string '7' (length=1)
+      'goods_id' => string '1' (length=1)
+     */
+    public function goods_order(){
+           if( request()->isPost() ){
+            $map = input('post.');
+             $goods_info = Db::name('goods')->where('goods_id',$map['goods_id'])->find();
+            $address = Db::name("address")->where('user_id',$this->userInfo["id"])->select();
+            foreach($address as $k=>$v){
+                $address[$k]["details"] = str_replace(">"," ",$v["details"]);
+            }
+//            $acting = Db::name("userinfo")->where("user_id",$this->userInfo["id"])->value("acting");
+            $this->titleName = "订单确认";
+            $goods_info["buy_num"] = $map["count"];
+//            $this->assign("acting",$acting);
+           $this->assign("address",$address);
+            $this->assign('data',$goods_info);
+            return $this->fetch();
+        }else{
+            $this->error("订单错误");
+        }
+    }
+
+    /*
+    'remark' => string '' (length=0)
+      'pay_type' => string '1' (length=1)
+      'address_id' => string '19' (length=2)
+      'goods_id' => string '1' (length=1)
+      'buy_sum' => string '3' (length=1)
+      'total_price' => string '60' (length=2)
+     */
+    public function goods_pay(){
+        //插入订单
+        $map = input('param.');
+        if($map['pay_type'] == 1){
+            $goods_info = Db::name("goods")->where(array("goods_id"=>$map["goods_id"],"status"=>1))->find();
+
+            $total_price = $map['buy_sum']*$goods_info['sales_price'];
+
+            $Arr = array(
+                "order_no" => "sj".time().$this->userInfo["id"],
+                "user_id" => $this->userInfo["id"],
+                "goods_id" => $goods_info["goods_id"],
+                "address_id"=>$map['address_id'],
+                'goods_price'=>$goods_info['sales_price'],
+                "goods_name" => $goods_info["goods_name"],
+                "total_price" => $total_price,
+                "goods_num" => $map["buy_sum"],
+                "payway" => $map['pay_type'],
+                "add_time" => time(),
+                "status" => 1,//正常状态
+            );
+
+            $id = Db::name("goodsOrder")->insert($Arr,false,true);
+            if($id){
+                    $this->redirect('Order/goods_proof',array('id'=>$id));
+                }
+            }
+
+        }    
+
+
+    public function goods_proof(){
+          $map = input("param.");
+        if( empty($map["id"])){
+            $this->error("错误数据");
+        }
+        $price = Db::name("goodsOrder")->where("id",$map["id"])->value("total_price");
+
+        //收款人信息
+        $Arr = $this->configArr;
+
+        $Arr["price"] = $price;
+        $Arr["id"] = $map["id"];
+        $this->titleName = "线下支付";
+        $this->assign("Arr",$Arr);
+        return $this->fetch();
+    }
+    /*
+     * 长传凭证提交处
+     */
+    public function goods_up_proof(){
+        if( request()->isPost()){
+            $map = input('post.');
+           $file =  $this->request->file('file');
+           if($file){
+               $info = $file ->move(ROOT_PATH.'../public'.DS.'Uploader/Shopping/proof');
+               if($info){
+                   $imgUrl = '/Uploader/Shopping/proof/'.$info->getSaveName();
+                   Db::name("goodsOrder")->where("id",$map["id"])->update(array("proof"=>$imgUrl,"status"=>6));
+                   $this->redirect('Order/goods_order_list');
+               }else{
+                   $this->error("上传支付凭证失败");
+               }
+           }
+        }
+    }
+
+    public function goods_order_list(){
+
+        $list = Db::name("goodsOrder")->where(array("status"=>["gt",0],"user_id"=>$this->userInfo["id"]))->order('id desc')->select();
+        $this->titleName = "我的商城订单";
+        $this->assign("data",$list);
+        return $this->fetch();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

@@ -1,0 +1,37 @@
+{extend name="public:base" /}
+{block name="content"}
+<div class="tixian">
+    <h1 class="h1">线下支付</h1>
+    <input type="number" placeholder="卡号：{$Arr.income_code}" disabled="disabled" />
+    <input type="text" placeholder="银行开户行：{$Arr.income_type}" disabled="disabled" />
+    <input type="text" placeholder="收款人姓名：{$Arr.income_name}" disabled="disabled" />
+    <input type="text" placeholder="打款金额：{$Arr.price}" disabled="disabled" />
+    <p style="width: 80%;margin: auto;">上传打款凭据</p>
+    <form id="proofForm" method="post" class="layui-form" action='{:url("Order/goods_up_proof")}' enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$Arr.id}">
+        <input style="margin-top:0px;" type="file" id="file" name="file"  class="element">
+        <input type="button" onclick="submitFuc()" value="提交" />
+    </form>
+    <p>温馨提示：打款后上传凭据，然后提交，客服会在工作日内进行处理。</p>
+</div>
+{/block}
+
+{block name="js"}
+<script src="__INDEX__/js/layer/mobile/layer_mobile.js"></script>
+<script src="__INDEX__/js/layer/mobile/layer.js"></script>
+<script type="text/javascript">
+    function submitFuc(){
+        var v = $("#file").val();
+        if( v == "" ){
+            layer.open({
+                content: '请选择支付凭证'
+                ,style: 'color:#ffffff;border:none;'
+                ,time: 2 //2秒后自动关闭
+            });
+            return false;
+        }else{
+            $("#proofForm").submit();
+        }
+    }
+</script>
+{/block}
