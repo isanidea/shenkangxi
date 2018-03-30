@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/index/index.html";i:1516084777;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522310030;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/index/index.html";i:1516084777;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
 <!DOCTYPE html>
 
 <html>
@@ -67,7 +67,7 @@
 
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
-
+             
             <ul class="layui-nav layui-nav-tree site-demo-nav">
 
                 <li class="layui-nav-item"><a href='<?php echo url("Index/index"); ?>'>首页</a></li>

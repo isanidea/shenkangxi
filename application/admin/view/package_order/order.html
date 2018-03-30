@@ -1,0 +1,163 @@
+{extend name="public:base" /}
+{block name="content"}
+
+<div class="account-info">
+    <div class="screening">
+        <form class="layui-form" action="" method="get">
+
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">订单编号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="order_no"  lay-verify="sort" autocomplete="off" class="layui-input" value="{$Arr['order_no']? $Arr['order_no'] : ''}">
+                </div>
+            </div>
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">订单状态</label>
+                <div class="layui-input-inline">
+                    <select name="status">
+                        <option value="0"  {$Arr['status'] == 0 ? 'selected' : ''} >请选择</option>
+                        {foreach name="statusName" item="v" key="k" }
+                        <option value="{$k}"   {$Arr['status'] == $k ? 'selected' : ''} >{$v}</option>
+                        {/foreach}
+
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">开始时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" lay-verify="start_time" value="{$Arr['start_time']? $Arr['start_time'] : ''}" name="start_time" id="start_time" placeholder="yyyy-MM-dd HH:mm:ss">
+                </div>
+            </div>
+            <div class="layui-form-item" style="clear: none;float: left">
+                <label class="layui-form-label">结束时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" class="layui-input" name="end_time" value="{$Arr['end_time']? $Arr['end_time'] : ''}" id="end_time" placeholder="yyyy-MM-dd HH:mm:ss">
+                </div>
+            </div>
+
+            <div class="layui-form-item" style="clear: none;float: left">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="formDemo">确定</button>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+        </form>
+    </div>
+    <div class="info">
+        <table id="demo" class="layui-table" lay-data="{height:730, url:'{$url}', page:true, id:'test'}" lay-filter="test">
+            <thead>
+            <tr>
+                <th lay-data="{field:'id', width:60, sort: true}">ID</th>
+                <th lay-data="{field:'order_no', width:200}">订单编号</th>
+                <th lay-data="{field:'uid', width:150}">购买人ID</th>
+                <th lay-data="{field:'pname', width:268}">商品名</th>
+                <th lay-data="{field:'total_price', width:100}">支付金额</th>
+                <th lay-data="{field:'buy_num', width:100}">数量</th>
+                <th lay-data="{field:'buy_time', width:200, sort: true}">购买时间</th>
+                <th lay-data="{field:'statusName', width:150, sort: true}">状态</th>
+                <th lay-data="{field:'statusVal', width:200,toolbar: '#barDemo'}">操作</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+{/block}
+
+{block name="js"}
+
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    layui.use('table', function(){
+        var table = layui.table;
+        //监听工具条
+        table.on('tool(test)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值
+            var tr = obj.tr; //获得当前行 tr 的DOM对象
+
+            if(layEvent === 'detail'){ //查看
+                var id = data.id;
+                layui.use('layer', function(){
+                    var layer = layui.layer;
+                    layer.open({
+                        title:"订单详情",
+                        type: 2,
+                        area: ['800px', '800px'],
+                        content: ['/index.php/admin/packageOrder/details?id='+id, 'no'],
+                        end: function () {
+                            location.reload();
+                        }
+                    });
+                });
+            }else if( layEvent === 'delivery' ){
+                var status1 = data.statusVal;
+                if( status1 == 20 || status1 == 5 ){
+                    prompt_From_one("此订单不能驳回");
+                    return false;
+                }
+                layer.confirm('确定此订单驳回吗？不可更改！', function(index){
+
+                    var id = data.id;
+                    $.ajax({
+                        type: 'POST',
+                        url: '{:url("PackageOrder/order_del")}',
+                        dataType: 'json',
+                        data: {id: id,status:5},
+                        success: function (data) {
+                            layer.close(index);
+                            if( data.result != 0 ){
+                                prompt_From_one(data.msg);
+                            }else{
+                                location.reload();
+                            }
+                        }
+                    });
+                    //向服务端发送删除指令
+                });
+            }
+
+        });
+
+
+    });
+
+    layui.use('form', function(){
+        var form = layui.form;
+        form.verify({
+            start_time: function(value){
+                var  end_time = $("#end_time").val();
+                if( end_time != ""){
+                    if( value == "" ){
+                        return '请选择开始时间';
+                    }
+                }
+            }
+        });
+    });
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        //时间选择器
+        laydate.render({
+            elem: '#start_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+        laydate.render({
+            elem: '#end_time'
+            ,type: 'datetime'
+            ,trigger: 'click'
+        });
+    });
+</script>
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-normal layui-btn-mini" lay-event="delivery">驳回</a>
+    <!--<a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>-->
+</script>
+{/block}

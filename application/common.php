@@ -2,8 +2,16 @@
 // 应用公共文件
 require_once 'helper.php';
 
-function p($var){
-    dump($var);
+function p($data){
+    if(is_bool($data)){
+        $show_data = $data ? 'ture': 'false';
+    }elseif(is_null($data)){
+        $show_data = 'null';
+    }else{
+        $show_data = print_r($data,true);
+    }
+    echo $show_data;
+
 }
 
 //日志

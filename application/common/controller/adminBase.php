@@ -142,15 +142,15 @@ class adminBase extends Base{
 
             $data=input('post.');
         }
-        $result = $this->validate($data,$this->controller);
-        if($result!==true){
-            $retArr = [
-                "result" => 1,
-                "msg" => $result,
-            ];
-            $this->dataError = "uid=".UID."|".json_encode($retArr);
-            $this->json_return(1,"非法数据");
-        }
+        // $result = $this->validate($data,$this->controller);
+        // if($result!==true){
+        //     $retArr = [
+        //         "result" => 1,
+        //         "msg" => $result,
+        //     ];
+        //     $this->dataError = "uid=".UID."|".json_encode($retArr);
+        //     $this->json_return(1,"非法数据");
+        // }
         $id = app_model("admin",$this->controller)->add_up_data($data);
         if( !$id ){
 
@@ -161,7 +161,7 @@ class adminBase extends Base{
 
     //不需要验证的方法
     private function _noAuthValidate($isAdmin){
-
+        
         if( $isAdmin == 1 ){
             return false;
         }

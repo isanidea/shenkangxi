@@ -1,9 +1,10 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package/index.html";i:1522396211;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>{$configArr.company}后台管理</title>
+    <title><?php echo $configArr['company']; ?>后台管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -22,12 +23,12 @@
         }
     </style>
 
-    {block name="css"}
+    
+<link rel="stylesheet" href="__STATIC__/admin/css/adminPage.css"  media="all">
 
-    {/block}
-    {block name="style"}
+    
 
-    {/block}
+    
 
     <!--[if lt IE 9]>
     <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -53,13 +54,13 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">
                         <img src="__STATIC__/layui/images/admin_img.jpg" class="layui-nav-img">
-                        {$userName}
+                        <?php echo $userName; ?>
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a onclick="savePasswd()">修改密码</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href='{:url("Admin/quitLogin")}'>退出</a></li>
+                <li class="layui-nav-item"><a href='<?php echo url("Admin/quitLogin"); ?>'>退出</a></li>
             </ul>
         </div>
     </div>
@@ -69,20 +70,20 @@
              
             <ul class="layui-nav layui-nav-tree site-demo-nav">
 
-                <li class="layui-nav-item"><a href='{:url("Index/index")}'>首页</a></li>
+                <li class="layui-nav-item"><a href='<?php echo url("Index/index"); ?>'>首页</a></li>
 
-                {foreach $navList as $v}
+                <?php foreach($navList as $v): ?>
                 <li class='layui-nav-item <?php if( in_array( $navArr["nav_controller"], $v["controllers"]) ){ echo "layui-nav-itemed"; } ?>'>
-                    <a class="javascript:;" href="javascript:;">{$v.name} <span class="layui-nav-more"></span></a>
+                    <a class="javascript:;" href="javascript:;"><?php echo $v['name']; ?> <span class="layui-nav-more"></span></a>
                     <dl class="layui-nav-child">
-                        {foreach $v.list as $vv}
+                        <?php foreach($v['list'] as $vv): ?>
                         <dd class='<?php if( $vv["nav_controller"] == $navArr["nav_controller"] && $vv["nav_action"] == $navArr["nav_action"]){  echo "layui-this"; } ?>'>
-                            <a href='{:url($vv.url)}'>{$vv.name}</a>
+                            <a href='<?php echo url($vv['url']); ?>'><?php echo $vv['name']; ?></a>
                         </dd>
-                        {/foreach}
+                        <?php endforeach; ?>
                     </dl>
                 </li>
-                {/foreach}
+                <?php endforeach; ?>
 
                 <li class="layui-nav-item" style="height: 30px; text-align: center"></li>
                 <span class="layui-nav-bar"></span>
@@ -99,22 +100,89 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        {block name="html"}
+        
 
         <div style="padding: 15px 20px;">
             <div class="content">
                 <div class="content-top">
-                    <p>{$headerName}</p>
+                    <p><?php echo $headerName; ?></p>
                 </div>
                 <div style="padding: 10px;">
-                    {block name="content"}
+                    
+<a class="layui-btn layui-btn-normal" href='<?php echo url("package/add"); ?>' >添加商品</a>
 
-                    {/block}
+
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="100">
+        <col width="200">
+        <col width="200">
+        <col width="100">
+        <col width="200">
+        <col width="100">
+        <col width="100">
+        <col width="100">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>排序</th>
+        <th>商品名</th>
+        <th>图片</th>
+        <th>成本价</th>
+        <th>售价</th>
+        <th>状态</th>
+        <th>添加时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($list as $v): ?>
+    <tr>
+        <td><?php echo $v->id; ?></td>
+        <td><?php echo $v->sort; ?></td>
+        <td><?php echo $v->pname; ?></td>
+        <td>
+            <img src="<?php echo $v->img; ?>" style="width: 60px;height: 60px;">
+        </td>
+        <td><?php echo $v->cost_price; ?></td>
+        <td><?php echo $v->sales_price; ?></td>
+        <td>
+            <?php echo !empty($v->status) && $v->status==5?'<span>上线</span>' : '<span style="color: red">下线</span>'; ?>
+        </td>
+        <td>
+            <?php echo date("y-m-d H:i",$v->add_time); ?>
+        </td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a  class="layui-btn layui-btn-mini" href='<?php echo url("Package/add",array("id"=>$v["id"])); ?>' lay-event="edit">编辑</a>
+                <?php if($v['status'] == 5): ?>
+                <a onclick="saveStatusVal(this,'<?php echo $v->id; ?>',10)" data-url='<?php echo url("package/saveStatus"); ?>' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">上线</a>
+
+                <?php elseif($v['status'] == 10): ?>
+                <a onclick="saveStatusVal(this,'<?php echo $v->id; ?>',5)" data-url='<?php echo url("package/saveStatus"); ?>' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">下线</a>
+                <?php endif; ?>
+
+                <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,'<?php echo $v->id; ?>')" data-url='<?php echo url("package/delete"); ?>'>删除</a>
+            </div>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<div style="text-align: center">
+    <?php echo $list->render(); ?>
+    <p>共 <span style="color: #FF5722"><?php echo $pagetotal; ?></span> 条</p>
+</div>
+
                 </div>
             </div>
         </div>
 
-        {/block}
+        
     </div>
 </div>
 
@@ -149,7 +217,7 @@
                 title:"修改密码",
                 type: 2,
                 area: ['500px', '300px'],
-                content: ['{:url("Admin/savePasswd")}', 'no'],
+                content: ['<?php echo url("Admin/savePasswd"); ?>', 'no'],
                 end: function () {
                     location.reload();
                 }
@@ -171,7 +239,17 @@
         });
     </script>
 </div>
-{block name="js"}{/block}
-{block name="javascript"}{/block}
+
+<script src="__STATIC__/admin/js/fromCommon.js" charset="utf-8"></script>
+
+
+
+
+
+<script>
+
+</script>
+
+
 </body>
 </html>

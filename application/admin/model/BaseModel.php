@@ -7,13 +7,6 @@ use think\Model;
 class BaseModel extends Model{
 
 
-
-
-
-
-
-
-
     public function statusWhere($status=""){
         if( $status == "" ){
             return $this->where("status > 0 ");
@@ -50,6 +43,10 @@ class BaseModel extends Model{
 
     public function getAll(){
         return $this->statusWhere()->order("sort desc")->select();
+    }
+
+    public function getListPage($where,$order="id desc",$filed="*"){
+        return $this->field($filed)->where($where)->order($order)->paginate();
     }
 }
 ?>
