@@ -15,7 +15,7 @@ class Nav{
 
     public function __construct(){
 
-//        Cache::clear();
+       Cache::clear();
 
         $this->wholeMenu = Cache::remember("wholeMenu",function(){
             //获取

@@ -16,8 +16,8 @@ class Role extends adminBase
     public function add(){
 
         if( request()->isAjax() ){
-            $id = $this->insert_updata();
-            $this->ajax_return($id);
+            $this->insert_updata();
+            $this->json_return();
         }
         $this->assign("submitUrl",url("Role/add"));
         return $this->fetch("edit");
@@ -28,19 +28,16 @@ class Role extends adminBase
     //修改
     function edit(){
 
-        if( request()->isAjax() ){
+        if( request()->isAjax() ) {
 
-            $id = $this->insert_updata();
-            $this->ajax_return($id,"edit");
-
-        }else{
-
-            $data = input('param.');
-            if( !isset($data["id"]) || empty($data["id"]) ){
-                return $this->success('非法操作',url('Role/index'));
-            }
-            $Arr = Db::name("Module")->where("id",$data["id"])->find();
+            $this->insert_updata();
+            $this->json_return();
         }
+        $data = input('param.');
+        if( !isset($data["id"]) || empty($data["id"]) ){
+            return $this->success('非法操作',url('Role/index'));
+        }
+        $Arr = Db::name("Module")->where("id",$data["id"])->find();
         $this->assign("submitUrl",url("Role/edit"));
         $this->assign("Arr",$Arr);
         return $this->fetch();

@@ -19,8 +19,8 @@ class Department extends adminBase
     public function add(){
 
         if( request()->isAjax() ){
-            $id = $this->insert_updata();
-            $this->ajax_return($id);
+            $this->insert_updata();
+            $this->json_return();
         }
         $this->assign("submitUrl",url("Department/add"));
         return $this->fetch("edit");
@@ -33,17 +33,16 @@ class Department extends adminBase
 
         if( request()->isAjax() ){
 
-            $id = $this->insert_updata();
-            $this->ajax_return($id,"edit");
+            $this->insert_updata();
+            $this->json_return();
 
-        }else{
-
-            $data = input('param.');
-            if( !isset($data["id"]) || empty($data["id"]) ){
-                return $this->success('非法操作',url('Department/index'));
-            }
-            $Arr = Db::name("Department")->where("id",$data["id"])->find();
         }
+
+        $data = input('param.');
+        if( !isset($data["id"]) || empty($data["id"]) ){
+            return $this->success('非法操作',url('Department/index'));
+        }
+        $Arr = Db::name("Department")->where("id",$data["id"])->find();
         $this->assign("submitUrl",url("Department/edit"));
         $this->assign("Arr",$Arr);
         return $this->fetch();

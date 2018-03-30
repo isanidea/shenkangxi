@@ -2,6 +2,7 @@
 namespace app\admin\controller;
 
 use app\common\controller\adminBase;
+use think\Cache;
 use think\Db;
 class Module extends adminBase
 {
@@ -19,8 +20,10 @@ class Module extends adminBase
     public function add(){
 
         if( request()->isAjax() ){
-            $id = $this->insert_updata();
-            $this->ajax_return($id);
+            $this->insert_updata();
+
+            Cache::rm('wholeMenu');
+            $this->json_return();
         }
         $this->assign("submitUrl",url("Module/add"));
         return $this->fetch("edit");
@@ -33,17 +36,19 @@ class Module extends adminBase
 
         if( request()->isAjax() ){
 
-            $id = $this->insert_updata();
-            $this->ajax_return($id,"edit");
+            $this->insert_updata();
 
-        }else{
+            Cache::rm('wholeMenu');
+            $this->json_return();
 
-            $data = input('param.');
-            if( !isset($data["id"]) || empty($data["id"]) ){
-                return $this->success('非法操作',url('Module/index'));
-            }
-            $Arr = Db::name("Module")->where("id",$data["id"])->find();
         }
+
+        $data = input('param.');
+        if( !isset($data["id"]) || empty($data["id"]) ){
+            return $this->success('非法操作',url('Module/index'));
+        }
+        $Arr = Db::name("Module")->where("id",$data["id"])->find();
+
         $this->assign("submitUrl",url("Module/edit"));
         $this->assign("Arr",$Arr);
         return $this->fetch();

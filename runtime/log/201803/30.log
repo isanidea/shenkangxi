@@ -1,0 +1,584 @@
+---------------------------------------------------------------
+[ 2018-03-30T03:08:50+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.088336s][吞吐率：11.32req/s] [内存消耗：2,331.05kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006179s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.013752s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.002795s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:11:28+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.030559s][吞吐率：32.72req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001329s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005474s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000305s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:11:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.040307s][吞吐率：24.81req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000966s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006932s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000377s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:02+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.031487s][吞吐率：31.76req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002923s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006296s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000358s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:03+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.036729s][吞吐率：27.23req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002008s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005204s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000440s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.037693s][吞吐率：26.53req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002023s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005221s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000358s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.032694s][吞吐率：30.59req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000603s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003573s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000273s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:05+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.041140s][吞吐率：24.31req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000699s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003653s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000351s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:06+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.039145s][吞吐率：25.55req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002367s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004152s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000576s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:06+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.030836s][吞吐率：32.43req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001445s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002656s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000338s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:06+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.032673s][吞吐率：30.61req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000644s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002542s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.031578s][吞吐率：31.67req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001520s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002938s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000381s ]
+---------------------------------------------------------------
+[ 2018-03-30T03:14:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/login/login
+[ info ] www.skx.com/index.php/admin/login/login [运行时间：0.025641s][吞吐率：39.00req/s] [内存消耗：2,331.36kb] [文件加载：42]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'keep-alive',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-cn',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8',
+  'cookie' => 'PHPSESSID=8gosr881evvs3ogfr9f5nqqmnn',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->login[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/login.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000466s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003049s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000348s ]

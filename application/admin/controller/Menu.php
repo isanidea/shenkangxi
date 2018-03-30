@@ -57,27 +57,24 @@ class Menu extends adminBase
             $nameArr = app_model("admin","Module")->getKeyValueArr($data["module_id"],"name");
             if( empty($nameArr) ){
 
-                $retArr = [
-                    "result" => 1,
-                    "msg" => "非法数据",
-                ];
                 $this->dataError = "uid=".UID."|".json_encode($data);
-                $this->json_return($retArr);
+                
+                $this->json_return(1,"非法数据");
 
             }else{
                 $data["module_name"] = $nameArr[0];
                 $data["startTime"] = time();
                 $data["admin_id"] = UID;
             }
-            $id = $this->insert_updata($data);
+            $this->insert_updata($data);
             Cache::rm('wholeMenu');
-            $this->ajax_return($id);
+            $this->json_return();
 
-        }else{
-
-            $moduleList = app_model("admin","Module")->getAll();
-            $moduleList = collection($moduleList)->toArray();
         }
+
+
+        $moduleList = app_model("admin","Module")->getAll();
+        $moduleList = collection($moduleList)->toArray();
 
         $this->assign("submitUrl",url("Menu/add"));
         $this->assign("moduleList",$moduleList);
@@ -95,32 +92,28 @@ class Menu extends adminBase
             $nameArr = app_model("admin","Module")->getKeyValueArr($data["module_id"],"name");
             if( empty($nameArr) ){
 
-                $retArr = [
-                    "result" => 1,
-                    "msg" => "非法数据",
-                ];
                 $this->dataError = "uid=".UID."|".json_encode($data);
-                $this->json_return($retArr);
+                $this->json_return(1,"非法数据");
 
             }else{
                 $data["module_name"] = $nameArr[0];
                 $data["startTime"] = time();
                 $data["admin_id"] = UID;
             }
-            $id = $this->insert_updata($data);
+            $this->insert_updata($data);
             Cache::rm('wholeMenu');
-            $this->ajax_return($id,"edit");
+            $this->json_return();
 
-        }else{
-
-            $data = input('param.');
-            if( !isset($data["id"]) || empty($data["id"]) ){
-                return $this->success('非法操作',url('Menu/index'));
-            }
-            $Arr = Db::name("Menu")->where("id",$data["id"])->find();
-            $moduleList = app_model("admin","Module")->getAll();
-            $moduleList = collection($moduleList)->toArray();
         }
+        $data = input('param.');
+        if( !isset($data["id"]) || empty($data["id"]) ){
+            return $this->success('非法操作',url('Menu/index'));
+        }
+        $Arr = Db::name("Menu")->where("id",$data["id"])->find();
+        $moduleList = app_model("admin","Module")->getAll();
+        $moduleList = collection($moduleList)->toArray();
+
+
         $this->assign("Arr",$Arr);
         $this->assign("submitUrl",url("Menu/edit"));
         $this->assign("moduleList",$moduleList);

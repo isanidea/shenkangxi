@@ -1,6 +1,6 @@
 {extend name="public:base" /}
 {block name="css"}
-<link rel="stylesheet" href="__PUBLIC__/css/adminPage.css"  media="all">
+<link rel="stylesheet" href="__ADMIN__/css/adminPage.css"  media="all">
 {/block}
 {block name="content"}
 
@@ -36,7 +36,7 @@
     <tr>
         <td>{$v->id}</td>
         <td>
-            <a href="">{$v->name}</a>
+            <a href='{:url("Admin/adminrole",array("id"=>$v->id))}'>{$v->name}</a>
         </td>
         <td>{$v->account}</td>
         <td>{$v->departmentName}</td>
@@ -64,7 +64,7 @@
 
 
 {block name="js"}
-<script src="__JS__/fromCommon.js" charset="utf-8"></script>
+
 {/block}
 
 {block name="javascript"}

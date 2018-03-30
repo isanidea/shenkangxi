@@ -9,8 +9,7 @@ class Admin extends adminBase
 {
     public function index()
     {
-		
-		
+
         $admin = app_model("admin","admin");
 
         $list = $admin->getPageList();
@@ -28,19 +27,16 @@ class Admin extends adminBase
 
             $data=input('post.');
             if( !isset($data["passwd"]) || empty($data["passwd"]) ){
-                $retArr = [
-                    "result" => 1,
-                    "msg" => "请输入密码",
-                ];
-                $this->json_return($retArr);
+
+                $this->json_return(1,"请输入密码");
             }
 
             $pas_salt = getRandChar(6);
             $data["passwd"] = getMd5Pas($data["passwd"],$pas_salt);
             $data["pas_salt"] = $pas_salt;
 
-            $id = $this->insert_updata($data);
-            $this->ajax_return($id);
+            $this->insert_updata($data);
+            $this->json_return();
 
         }
 
@@ -68,21 +64,21 @@ class Admin extends adminBase
                 unset($data["passwd"]);
             }
 
-            $id = $this->insert_updata($data);
-            $this->ajax_return($id,"edit");
+            $this->insert_updata($data);
+            $this->json_return();
 
-        }else{
-
-            $data = input('param.');
-            if( !isset($data["id"]) || empty($data["id"]) ){
-                return $this->success('非法操作',url('Admin/index'));
-            }
-            $Arr = Db::name("Admin")->where("id",$data["id"])->find();
-
-            $departmentList = app_model("admin","Department")->getAll();
-
-            $this->assign("departmentList",$departmentList);
         }
+
+        $data = input('param.');
+        if( !isset($data["id"]) || empty($data["id"]) ){
+
+            return $this->success('非法操作',url('Admin/index'));
+        }
+        $Arr = Db::name("Admin")->where("id",$data["id"])->find();
+
+        $departmentList = app_model("admin","Department")->getAll();
+
+        $this->assign("departmentList",$departmentList);
 
         $this->assign("Arr",$Arr);
         $this->assign("submitUrl",url("Admin/edit"));
@@ -123,7 +119,7 @@ class Admin extends adminBase
                 $adminRole->where("id","in",$delArr)->delete();
             }
 
-            $this->json_return(array("result"=>0));
+            $this->json_return();
 
         }else{
 
@@ -167,19 +163,16 @@ class Admin extends adminBase
         if( request()->isAjax() ){
             $data=input('post.');
             if( !isset($data["passwd"]) || empty($data["passwd"]) ){
-                $retArr = [
-                    "result" => 1,
-                    "msg" => "请输入密码",
-                ];
-                $this->json_return($retArr);
+
+                $this->json_return(1,"请输入密码");
             }
 
             $pas_salt = getRandChar(6);
             $data["passwd"] = getMd5Pas($data["passwd"],$pas_salt);
             $data["pas_salt"] = $pas_salt;
             $data["id"] = UID;
-            $id = app_model("admin",$this->nav_controller)->add_up_data($data);
-            $this->ajax_return($id,"edit");
+            app_model("admin","admin")->add_up_data($data);
+            $this->json_return();
         }
 
         $this->assign("submitUrl",url("Admin/savePasswd"));

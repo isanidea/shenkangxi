@@ -39,9 +39,7 @@ class BaseModel extends Model{
                 return $data["id"];
             }
         }else{
-            if( $this->save($data) ){
-                return $this->id;
-            }
+            return $this->insert($Arr,false,true);
         }
         return false;
     }

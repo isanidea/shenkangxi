@@ -75,7 +75,7 @@ class Privilege extends adminBase
                 $privilege->where("id","in",$delArr)->delete();
             }
 
-            $this->json_return(array("result"=>0));
+            $this->json_return();
         }
 
     }

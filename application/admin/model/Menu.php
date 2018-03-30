@@ -17,10 +17,10 @@ class Menu extends BaseModel{
     //获取全部列表
     public function getWholeMenuList(){
 
-        return $this->field("xls_menu.*")
-            ->where("xls_menu.status>0 AND xls_module.status>0")
-            ->join("xls_module","xls_module.id = xls_menu.module_id","RIGHT")
-            ->order("xls_module.sort desc, xls_menu.sort desc")
+        return $this->field("skx_menu.*")
+            ->where("skx_menu.status>0 AND skx_module.status>0")
+            ->join("skx_module","skx_module.id = skx_menu.module_id","RIGHT")
+            ->order("skx_module.sort desc,skx_menu.sort desc")
             ->select();
     }
 

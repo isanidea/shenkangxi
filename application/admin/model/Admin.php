@@ -17,10 +17,10 @@ class Admin extends BaseModel{
 
     public function getPageList(){
 
-        return $this->field("xls_admin.*, xls_department.name as departmentName")
-            ->join("xls_department","xls_department.id = xls_admin.department_id","RIGHT")
-            ->where("xls_admin.isAdmin = 0 and xls_admin.status>0 AND xls_department.status > 0")
-            ->order("xls_admin.id desc")
+        return $this->field("admin.*, department.name as departmentName")
+            ->join("skx_department","skx_department.id = skx_admin.department_id","RIGHT")
+            ->where("admin.isAdmin = 0 and admin.status>0 AND department.status > 0")
+            ->order("admin.id desc")
             ->paginate();
     }
 

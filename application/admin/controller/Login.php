@@ -18,7 +18,6 @@ class Login extends Base
         if( request()->isPost() ){
 
             $data=input('post.');
-
             if(empty($data['account'])){
                 $this->error('用户名不能为空！');
             }elseif(empty($data['passwd'])){

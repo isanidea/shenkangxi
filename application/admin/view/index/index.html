@@ -1,37 +1,8 @@
 {extend name="public:base" /}
 
-{block name="style"}
-<style type="text/css">
-    body{background-color: #E5E5E5}
-    .index-show{padding-top: 60px;width: 920px;margin: 0px auto;}
-    .index-show li{width: 200px;height: 100px;background-color: #fff;border-radius: 10px;float: left;margin-left: 30px;}
-    .index-show li p{line-height: 50px;text-align: center;font-size: 18px;color: #333;}
-    .index-show span {line-height: 30px; font-size: 18px;display: block;text-align: center;color: red;}
-</style>
-{/block}
 
 {block name="html"}
-<h1 style="width: 100%;line-height: 100px;font-size: 24px;text-align: center">欢迎登录后台管理</h1>
 
-
-<div class="index-show">
-    <li>
-        <p>今日总收入</p>
-        <span>{$Arr['today_income']? $Arr['today_income'] : '0.00'}</span>
-    </li>
-    <li>
-        <p>今日总支出</p>
-        <span style="color: #3ee362">{$Arr['today_pay']? $Arr['today_pay'] : '0.00'}</span>
-    </li>
-    <li>
-        <p>全部总收入</p>
-        <span>{$Arr['tatol_income']? $Arr['tatol_income'] : '0.00'}</span>
-    </li>
-    <li>
-        <p>全部总支出</p>
-        <span style="color: #3ee362">{$Arr['tatol_pay']? $Arr['tatol_pay'] : '0.00'}</span>
-    </li>
-    <div style="clear: both;"></div>
-</div>
+    <h1 style="line-height: 100px;font-size: 24px;text-align: center">欢迎登录后台管理</h1>
 
 {/block}
