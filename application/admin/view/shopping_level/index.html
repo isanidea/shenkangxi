@@ -1,0 +1,54 @@
+{extend name="public:base" /}
+{block name="content"}
+
+<a class="layui-btn" href='{:url("ShoppingLevel/edit",array())}'  lay-event="edit">添加</a>
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="150">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>消费等级</th>
+        <th>名称</th>
+        <th>价格</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $list as $v}
+    <tr>
+        <td>{$v["id"]}</td>
+        <td>{$v.level}</td>
+        <td>{$v.name}</td>
+        <td>{$v.price}</td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a class="layui-btn layui-btn-mini" href='{:url("ShoppingLevel/edit",array("id"=>$v["id"]))}'  lay-event="edit">编辑</a>
+            </div>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+
+{/block}
+
+{block name="js"}
+<script src="__ADMIN__/js/fromCommon.js" charset="utf-8"></script>
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+
+
+</script>
+
+{/block}

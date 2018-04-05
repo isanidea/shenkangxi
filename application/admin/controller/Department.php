@@ -6,14 +6,13 @@ use think\Db;
 class Department extends adminBase
 {
 
-
-
     public function index()
     {
         $list = app_model("admin","Department")->getAll();
 
         $this->assign("list",$list);
         return $this->fetch();
+
     }
 
     public function add(){

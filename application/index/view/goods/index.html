@@ -2,6 +2,14 @@
 {extend name="public/base"}
 {block name="css"}
 <link rel="stylesheet" href="__STATIC__/qiantai/css/css.css">
+<style type="text/css">
+    .sb_3{
+        color:blue;
+    }
+    .sb_3 span{
+        color:blue;
+    }
+</style>
 {/block}
 
 {block name="content"}
@@ -11,8 +19,8 @@
         <h5>小商店</h5>
         <dl>
             {volist name="list" id ="v" }
-            <dd><a href="{:url('goods/details',array('id'=>$v.goods_id))}">
-                <i><img src=""/>img</i>
+            <dd><a href="{:url('goods/details',array('id'=>$v.id))}">
+                <i><img src="{$v.img}"/></i>
                 <h6>{$v.goods_name}</h6>
                 <span>价格:&nbsp;{$v.sales_price}</span>
             </a></dd>

@@ -2,6 +2,14 @@
 {extend name="public/base"}
 {block name="css"}
 <link rel="stylesheet" href="__STATIC__/qiantai/css/css.css">
+<style type="text/css">
+    .sb_2{
+        color:blue;
+    }
+    .sb_2 span{
+        color:blue;
+    }
+</style>
 {/block}
 
 {block name="content"}
@@ -12,7 +20,7 @@
         <dl>
             {volist name="list" id ="v" }
             <dd><a href="{:url('product/details',array('id'=>$v.id))}">
-                <i><img src=""/>dfafsdf</i>
+                <i><img src="{$v.img}"/></i>
                 <h6>{$v.product_name}</h6>
                 <span>积分:&nbsp;{$v.sales_jifen}</span>
             </a></dd>

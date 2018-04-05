@@ -10,15 +10,14 @@ class PackageOrder extends adminBase
 
     public $statusName = [
         "5" => "驳回",
-        "10" => "待上传",
-        "15" => "已上传",
+        '6' => "待支付",
+        "10" => "待审核",
         "20" => "已发货",
     ];
 
     //订单列表
     public function order()
     {
-
 
         if( request()->isAjax() ){
 
@@ -59,19 +58,25 @@ class PackageOrder extends adminBase
                 ->limit($limitForm,$map["limit"])
                 ->select();
             /*
-            [id] => 9
-            [order_no] => sj152221011610000
-            [pid] => 1
-            [uid] => 10000
-            [pname] => 炸药包
-            [pimg] => http://skx.com/index.php/public/static/qiantai/img/rx.png
-            [buy_num] => 2
-            [total_price] => 20000
-            [payway] => 1
-            [proof] => 
-            [buy_time] => 1522210116
-            [status] => 10
-             */                
+            'id' => int 1
+     'order_no' => string 'sj152293161210000' (length=17)
+     'pid' => int 1
+     'uid' => int 10000
+     'pname' => string '鍗囩骇鍖�1' (length=10)
+     'pimg' => string '/Uploader/Package/20180405/21dae2554d1bd0656b4a762b5d27872a.jpg' (length=63)
+     'buy_num' => int 2
+     'sales_price' => string '680.00' (length=6)
+     'total_price' => string '1360' (length=4)
+     'buy_time' => int 1522931612
+     'payway' => int 1
+     'proof' => string '' (length=0)
+     'addres_id' => int 0
+     'f_time' => int 0
+     'express_code' => string '' (length=0)
+     'express_name' => string '' (length=0)
+     'pay_time' => int 0
+     'status' => int 6
+             */
             $data = [];
             foreach($list as $k=>$v){
                 $data[$k]["id"] = $v["id"];
@@ -138,13 +143,34 @@ class PackageOrder extends adminBase
 
         $Arr = Db::name("PackageOrder")->alias("a")
             ->join("skx_user b","a.uid = b.id","left")
-            ->join("skx_address c","c.id = a.id","left")
+            ->join("skx_address c","c.user_id = a.uid","left")
             ->field("a.*,b.nickname,c.name, c.phone, c.postcode, c.details")
             ->where("a.id",$id)
             ->find();
         $Arr["details"] = str_replace(">","",$Arr["details"]);
         $Arr["statusName"] = $this->statusName[$Arr["status"]];
-
+        /*
+            [id] => 9
+            [order_no] => sj152221011610000
+            [pid] => 1
+            [uid] => 10000
+            [pname] => 炸药包
+            [pimg] => http://skx.com/index.php/public/static/qiantai/img/rx.png
+            [buy_num] => 2
+            [sales_price] => 0.00
+            [total_price] => 20000
+            [payway] => 1
+            [proof] =>
+            [addres_id] => 0
+            [buy_time] => 1522210116
+            [status] => 10
+            [nickname] => wangbo
+            [name] => 王波
+            [phone] => 15755654774
+            [postcode] => 246511
+            [details] => 安徽马鞍山市当涂县4323423范德萨范德萨发 反倒是rewr
+            [statusName] => 待上传
+         */
         $this->assign("Arr",$Arr);
         return $this->fetch();
     }
@@ -154,6 +180,11 @@ class PackageOrder extends adminBase
 
         if( request()->isAjax() ){
             $map = input("post.");
+            /*
+            [id] => 8
+    [express_code] => dfsf
+    [express_name] => fas
+             */
             if( !isset($map["id"]) || !isset($map["express_code"]) || !isset($map["express_name"]) || empty($map["id"]) || empty($map["express_code"]) || empty($map["express_name"]) ){
                 $retArr["result"] = 1;
                 $retArr["msg"] = "数据有误";
@@ -166,7 +197,7 @@ class PackageOrder extends adminBase
             $Arr["pay_time"] = time();
             $Arr["f_time"] = time();
 
-            $id = Db::name("GoodsOrder")->where("id",$map["id"])->update($Arr);
+            $id = Db::name("PackageOrder")->where("id",$map["id"])->update($Arr);
             if( $id ){
                 $retArr["result"] = 0;
                 $retArr["msg"] = "操作成功";
@@ -190,18 +221,18 @@ class PackageOrder extends adminBase
                 ];
                 $this->json_return($retArr);
             }
-            $orderArr = Db::name("GoodsOrder")->field("pay_acting,user_id,status")->where("id",$map["id"])->find();
-            if( empty($orderArr) || $orderArr["status"]==5 || $orderArr["status"]== 20 ){
-                $retArr = [
-                    "id" => 1,
-                    "msg" => "操作有误"
-                ];
-                $this->json_return($retArr);
-            }
+            $pd = Db::name('packageOrder')->where('id',$map['id'])->update(array('status'=>5));
 
-            $pd = Db::name("GoodsOrder")->where("id",$map["id"])->update(array("status"=>5));
+            // if( empty($orderArr) || $orderArr["status"]==5 || $orderArr["status"]== 20 ){
+            //     $retArr = [
+            //         "id" => 1,
+            //         "msg" => "操作有误"
+            //     ];
+            //     $this->json_return($retArr);
+            // }
+
+            // $pd = Db::name("PackageOrder")->where("id",$map["id"])->update(array("status"=>5));
             if( $pd ){
-                Db::name("userinfo")->where("user_id",$orderArr["user_id"])->setInc("acting",$orderArr["pay_acting"]);
                 $retArr = [
                     "id" => 0,
                     "msg" => "操作成功"

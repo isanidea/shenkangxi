@@ -20,13 +20,13 @@
         <li>
             <p>商品：<u>{$d.pname}</u>
                 {if condition="$d.status==5"}<span style="color:#FFBF05;">驳回</span>
-                {elseif condition="$d.status eq 10"}<span style="color:#FF1400;">待上传</span>
-                {elseif condition="$d.status eq 15"}<span style="color:#8209FF;">待发货</span>
+                {elseif condition="$d.status eq 6"}<span style="color:#FF1400;">待支付</span>
+                {elseif condition="$d.status eq 10"}<span style="color:#FF1400;">待审核</span>
                 {elseif condition="$d.status eq 20"}<span style="color:#8209FF;">已发货</span>
                 {/if}</p>
             <p>价格:{$d.total_price}元</p>
-            <span>{$d.buy_time|date="Y-m-d H:m:s",###}</span>
-            {if condition="$d.status==10 or $d.status==15"}
+            <p>购买时间：{$d.buy_time|date="Y-m-d H:m:s",###}</p>
+            {if condition="$d.status==6"}
             <a href='{:url("Order/proof",array("id"=>$d.id))}'>上传凭证</a>
             {/if}
         </li>
@@ -36,6 +36,3 @@
 </div>
 
 {/block}
-
-
-

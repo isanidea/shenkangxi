@@ -45,7 +45,7 @@
         <td>{$v->cost_price}</td>
         <td>{$v->sales_price}</td>
         <td>
-            {$v->status == 5 ? '<span>上线</span>' : '<span style="color: red">下线</span>'}
+            {$v->status == 5 ? '<span>下线</span>' : '<span style="color: red">上线</span>'}
         </td>
         <td>
             {$v->add_time|date="y-m-d H:i",###}
@@ -54,10 +54,10 @@
             <div class="layui-table-cell laytable-cell-1-10">
                 <a  class="layui-btn layui-btn-mini" href='{:url("Package/add",array("id"=>$v["id"]))}' lay-event="edit">编辑</a>
                 {if condition="$v.status eq 5"}
-                <a onclick="saveStatusVal(this,'{$v->id}',10)" data-url='{:url("package/saveStatus")}' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">上线</a>
+                <a onclick="saveStatusVal(this,'{$v->id}',10)" data-url='{:url("package/saveStatus")}' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">下线</>
 
                 {elseif condition="$v.status eq 10"/}
-                <a onclick="saveStatusVal(this,'{$v->id}',5)" data-url='{:url("package/saveStatus")}' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">下线</a>
+                <a onclick="saveStatusVal(this,'{$v->id}',5)" data-url='{:url("package/saveStatus")}' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">上线</a>
                 {/if}
 
                 <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,'{$v->id}')" data-url='{:url("package/delete")}'>删除</a>

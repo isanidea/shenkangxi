@@ -2,6 +2,14 @@
 {extend name="public/base"}
 {block name="css"}
 <link rel="stylesheet" href="__STATIC__/qiantai/css/css.css">
+<style type="text/css">
+    .sb_1{
+        color:blue;
+    }
+    .sb_1 span{
+        color:blue;
+    }
+</style>
 {/block}
 
 {block name="content"}
@@ -12,7 +20,7 @@
         <dl>
             {volist name="list" id ="v" }
             <dd><a href="{:url('package/details',array('id'=>$v.id))}">
-                <i><img src=""/>dfafsdf</i>
+                <i><img src="{$v.img}"/></i>
                 <h6>{$v.pname}</h6>
                 <span>￥{$v.sales_price}</span>
             </a></dd>
@@ -49,8 +57,3 @@
     });
 </script>
 {/block}
-
-
-
-
-

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/index/view/login/index.html";i:1522122856;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/index/view/login/index.html";i:1522825104;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +30,7 @@
         <!--<input id="code" id="code_input" class="text_in text_code" datatype="*" placeholder="请输入验证码" nullmsg="请输入验证码" sucmsg="通过验证" name="code" type="text">-->
         <!--<div id="v_container" style="width:40%;height: 40px;position: absolute;right: 1px;margin-top:-41px"></div>-->
         <!--</div>-->
-
-        <input type="button" value="登录"/>
+        <input  style="width: 262px; height: 42px;margin-top: 10px;"  type="button" value="登录"/>
         <p style="overflow: hidden;"><a href="<?php echo url('register/index'); ?>" style="float: left;">立即注册</a><a href="<?php echo url("","",true,false);?>" style="float: right;">忘记密码？</a></p>
     </form>
 </div>

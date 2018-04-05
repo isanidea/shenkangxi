@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package/index.html";i:1522396211;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:87:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package/index.html";i:1522479634;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
 <!DOCTYPE html>
 
 <html>
@@ -151,7 +151,7 @@
         <td><?php echo $v->cost_price; ?></td>
         <td><?php echo $v->sales_price; ?></td>
         <td>
-            <?php echo !empty($v->status) && $v->status==5?'<span>上线</span>' : '<span style="color: red">下线</span>'; ?>
+            <?php echo !empty($v->status) && $v->status==5?'<span>下线</span>' : '<span style="color: red">上线</span>'; ?>
         </td>
         <td>
             <?php echo date("y-m-d H:i",$v->add_time); ?>
@@ -160,10 +160,10 @@
             <div class="layui-table-cell laytable-cell-1-10">
                 <a  class="layui-btn layui-btn-mini" href='<?php echo url("Package/add",array("id"=>$v["id"])); ?>' lay-event="edit">编辑</a>
                 <?php if($v['status'] == 5): ?>
-                <a onclick="saveStatusVal(this,'<?php echo $v->id; ?>',10)" data-url='<?php echo url("package/saveStatus"); ?>' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">上线</a>
+                <a onclick="saveStatusVal(this,'<?php echo $v->id; ?>',10)" data-url='<?php echo url("package/saveStatus"); ?>' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">下线</>
 
                 <?php elseif($v['status'] == 10): ?>
-                <a onclick="saveStatusVal(this,'<?php echo $v->id; ?>',5)" data-url='<?php echo url("package/saveStatus"); ?>' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">下线</a>
+                <a onclick="saveStatusVal(this,'<?php echo $v->id; ?>',5)" data-url='<?php echo url("package/saveStatus"); ?>' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">上线</a>
                 <?php endif; ?>
 
                 <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,'<?php echo $v->id; ?>')" data-url='<?php echo url("package/delete"); ?>'>删除</a>

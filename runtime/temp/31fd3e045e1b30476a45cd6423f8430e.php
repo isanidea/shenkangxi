@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:86:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/Package/edit.html";i:1522403344;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:86:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/Package/edit.html";i:1522928501;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
 <!DOCTYPE html>
 
 <html>
@@ -118,7 +118,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">商品名</label>
             <div class="layui-input-inline">
-                <input type="text" name="pname" lay-verify="required" autocomplete="off" class="layui-input" value="<?php echo !empty($Arr['name'])?$Arr['name'] : ''; ?>">
+                <input type="text" name="pname" lay-verify="required" autocomplete="off" class="layui-input" value="<?php echo !empty($Arr['pname'])?$Arr['pname'] : ''; ?>">
             </div>
         </div>
         <div class="layui-form-item">

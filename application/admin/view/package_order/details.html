@@ -22,7 +22,7 @@
 <div class="details">
     <li>
         <span>订单编号：</span>
-        <p>{$Arr.order_code}</p>
+        <p>{$Arr.order_no}</p>
         <div style="clear: both"></div>
     </li>
     <li>
@@ -32,8 +32,8 @@
     </li>
     <li>
         <span>商品图片：</span>
-        <a target="_blank" href='{:url("Package/add",array("id"=>$Arr["goods_id"]))}'>
-            <img src="{$Arr.img}">
+        <a target="_blank" href='{:url("Package/add",array("id"=>$Arr["pid"]))}'>
+            <img src="{$Arr.pimg}">
         </a>
         <div style="clear: both"></div>
     </li>
@@ -42,19 +42,20 @@
         <p>{$Arr.pname}</p>
         <div style="clear: both"></div>
     </li>
+
     <li>
         <span>商品价格：</span>
-        <p style="color: red">{$Arr.cost_price}（元）</p>
+        <p style="color: red">{$Arr.sales_price}（元）</p>
         <div style="clear: both"></div>
     </li>
     <li>
         <span>购买数量：</span>
-        <p>{$Arr.buy_sum}</p>
+        <p>{$Arr.buy_num}</p>
         <div style="clear: both"></div>
     </li>
     <li>
         <span>支付金额：</span>
-        <p>{$Arr.total_price}</p>
+        <p>￥{$Arr.total_price}</p>
         <div style="clear: both"></div>
     </li>
     <li>
@@ -62,15 +63,7 @@
         <p>{$Arr.buy_time|date="y-m-d H:i",###}</p>
         <div style="clear: both"></div>
     </li>
-    <li>
-        <span>发货时间：</span>
-        {if condition="$Arr.f_time == 0"}
-        <p style="color: #1E9FFF">待发货</p>
-        {else/}
-        <p>{$Arr.f_time|date="y-m-d H:i",###}</p>
-        {/if}
-        <div style="clear: both"></div>
-    </li>
+
     {if condition="$Arr.f_time == 0"}
     <li>
         <span>快递公司：</span>
@@ -97,7 +90,7 @@
 
     <li style="width: 100%;">
         <span>收货地址：</span>
-        <p>姓名：{$Arr.name}&nbsp;&nbsp;&nbsp;电话：{$Arr.mobile} &nbsp;&nbsp;&nbsp; 邮编：{$Arr.postcode}</p>
+        <p>姓名：{$Arr.name}&nbsp;&nbsp;&nbsp;电话：{$Arr.phone} &nbsp;&nbsp;&nbsp; 邮编：{$Arr.postcode}</p>
         <div style="clear: both"></div>
     </li>
     <li style="width: 100%;">
@@ -136,7 +129,7 @@
         layer.confirm('确定为驳回吗？不可更改！', function(index){
             $.ajax({
                 type: 'POST',
-                url: '{:url("Package/order_del")}',
+                url: '{:url("PackageOrder/order_del")}',
                 dataType: 'json',
                 data: {id: id,status:0},
                 success: function (data) {

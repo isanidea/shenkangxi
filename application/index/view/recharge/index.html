@@ -1,0 +1,59 @@
+{extend name="public:base" /}
+
+{block name="html"}
+        <div class="tixian">
+            <h1 class="h1">充值</h1>
+            <form id="orderForm" method="post" action='{:url("Recharge/pay_order")}'>
+                <input type="number" name="money" id="money" placeholder="输入充值金额" />
+                <input type="hidden" name="pay_type" id="pay_type" value="1">
+                <input type="button" value="提交" id="submitCash"/>
+            </form>
+        </div>
+
+{/block}
+
+{block name="js_file"}
+<script src="__INDEX__/js/jquery.min.js"></script>
+<script src="__INDEX__/js/jquery.js"></script>
+<script src="__INDEX__/js/layer/mobile/layer_mobile.js"></script>
+<script src="__INDEX__/js/layer/mobile/layer.js"></script>
+<script src="__INDEX__/js/common.js"></script>
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    $("#submitCash").click(function(){
+
+        var money = $("#money").val();
+        if(money == ''){
+            prompt_From_one("请输入充值金额");
+            return false;
+        }
+        layer.open({
+            content: '选择支付类型'
+            ,style:"background-color:#de484f;color:#fff;"
+            ,btn: ['线下支付', '线上支付']
+            ,yes: function(index){
+                //线下支付
+                $("#pay_type").val(1);
+                $("#orderForm").submit();
+            }
+            ,no:function(index){
+                //线上支付
+//                $("#pay_type").val(2);
+//                layer.closeAll();
+                prompt_From_one("线上支付暂未开放");
+//                $("#orderForm").submit();
+            }
+        });
+
+    })
+
+</script>
+
+{/block}
+
+
+

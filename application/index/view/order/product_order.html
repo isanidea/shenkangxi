@@ -39,16 +39,17 @@
         </dd>
         <form id="orderForm" method="post" action='{:url("Order/product_pay")}'>
             <dd><a href="#">买家留言<input placeholder="填写卖家需求" type="text" id="remark" name="remark"/></a></dd>
-            
-            <dd class="dd_2"><i>总计：积分：&nbsp;{$data.buy_num*$data.sales_jifen}</i></dd>
-            
+
+            <dd class="dd_2"><i>总计：&nbsp;{$data.buy_num*$data.sales_jifen} 积分</i></dd>
+
             <input type="hidden" id="pay_type" name="pay_type" value="1"/>
             <input type="hidden" id="address_id" name="address_id" value=""/>
             <input type="hidden" id="goods_id" name="product_id" value="{$data.id}"/>
             <input type="hidden" id="buy_sum" name="buy_sum" value="{$data.buy_num}"/>
-            <input type="hidden" id="total_price" name="total_price"value="{$data.buy_num*$data.sales_jifen}">
+            <input type="hidden" id="sales_jifen" name="sales_price" value="{$data.sales_jifen}"/>
+            <input type="hidden" id="total_jifen" name="total_jifen"value="{$data.buy_num*$data.sales_jifen}">
         </form>
-        <a href='javascript:;' onclick="submitPay()">确认支付</a>
+        <a href='javascript:;' onclick="submitPay()">生成订单</a>
     </dl>
 </div>
 {/block}

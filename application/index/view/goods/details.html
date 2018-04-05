@@ -20,7 +20,7 @@
 </div>
 <div class="xxy_xx">
     <h6>产品详情</h6>
-    <span>{$data.goods_details}</span>
+    <span>{$data.details}</span>
 </div>
 <div class="zf">
     <div class="zf_z">
@@ -35,9 +35,9 @@
                 <input class="join-money" name="count" type="number" value="1">
                 <input class="addBtn min" type="button" value="-"/>
             </div>
-            <input type="hidden" name="goods_id" value="{$data.goods_id}">
+            <input type="hidden" name="id" value="{$data.id}">
         </form>
-        <a href='javascript:;' onclick="submitOrderFuc()">提交</a>
+        <a href='javascript:;' style="position:relative;" onclick="submitOrderFuc()">提交</a>
     </div>
 </div>
 {/block}

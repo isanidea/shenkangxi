@@ -13,8 +13,8 @@ class Admin extends Validate
     protected $message = [
         'name.require'  =>  '真实姓名必填',
         'name.min'  =>  '真实姓名不能小于两个字',
-        'account.require'  =>  '后台账号必填',
-        'account.min'  =>  '后台账号不能小于4个字',
+        'username.require'  =>  '后台账号必填',
+        'username.min'  =>  '后台账号不能小于4个字',
     ];
 
 	

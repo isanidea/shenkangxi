@@ -1,0 +1,3741 @@
+---------------------------------------------------------------
+[ 2018-04-06T00:00:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.039801s][吞吐率：25.12req/s] [内存消耗：3,022.73kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000367s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005026s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003471s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000935s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:00:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.043889s][吞吐率：22.78req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000431s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003705s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000323s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003229s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.001490s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.004258s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000312s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:00:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/details?id=2
+[ info ] www.skx.com/index.php/admin/goods_order/details?id=2 [运行时间：0.057580s][吞吐率：17.37req/s] [内存消耗：3,201.48kb] [文件加载：54]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->details[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'headerName',
+  7 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000372s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005289s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.007023s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.001454s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002863s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`nickname`,`c`.`name`,`c`.`phone`,`c`.`postcode`,`c`.`details` FROM `skx_goods_order` `a` LEFT JOIN `skx_user` `b` ON `a`.`uid`=`b`.`id` LEFT JOIN `skx_address` `c` ON `c`.`user_id`=`a`.`uid` WHERE  `a`.`id` = '2' LIMIT 1 [ RunTime:0.000498s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.041162s][吞吐率：24.29req/s] [内存消耗：3,022.73kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000482s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005115s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002471s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000758s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.043048s][吞吐率：23.23req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000415s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004219s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000429s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003048s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000822s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002180s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000439s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/package_order/order.html
+[ info ] www.skx.com/index.php/admin/package_order/order.html [运行时间：0.043362s][吞吐率：23.06req/s] [内存消耗：3,019.43kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'package_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\PackageOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/PackageOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004014s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003226s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000708s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:12+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/package_order/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/package_order/order?status=0&page=1&limit=30 [运行时间：0.046334s][吞吐率：21.58req/s] [内存消耗：2,957.64kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'package_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\PackageOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/PackageOrder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000374s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005150s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002615s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002160s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_package_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_package_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000364s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:13+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/package_order/details?id=2
+[ info ] www.skx.com/index.php/admin/package_order/details?id=2 [运行时间：0.057012s][吞吐率：17.54req/s] [内存消耗：3,018.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'package_order',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\PackageOrder->details[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/PackageOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package_order/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'headerName',
+  7 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000569s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.007840s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.002048s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003434s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000781s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002262s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`nickname`,`c`.`name`,`c`.`phone`,`c`.`postcode`,`c`.`details` FROM `skx_package_order` `a` LEFT JOIN `skx_user` `b` ON `a`.`uid`=`b`.`id` LEFT JOIN `skx_address` `c` ON `c`.`user_id`=`a`.`uid` WHERE  `a`.`id` = '2' LIMIT 1 [ RunTime:0.000454s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:24+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/package_order/order.html
+[ info ] www.skx.com/index.php/admin/package_order/order.html [运行时间：0.039344s][吞吐率：25.42req/s] [内存消耗：3,019.47kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'package_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\PackageOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/PackageOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005754s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002501s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.001058s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:24+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/package_order/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/package_order/order?status=0&page=1&limit=30 [运行时间：0.039833s][吞吐率：25.10req/s] [内存消耗：2,957.64kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'package_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\PackageOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/PackageOrder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000365s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004795s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002176s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000807s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.003028s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_package_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_package_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000430s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.039925s][吞吐率：25.05req/s] [内存消耗：3,022.70kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000956s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004730s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000343s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003805s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000906s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:01:29+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.044344s][吞吐率：22.55req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000472s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004085s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002815s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.003076s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000518s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:02:22+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.034587s][吞吐率：28.91req/s] [内存消耗：3,222.88kb] [文件加载：54]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000382s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003361s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000274s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002453s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000751s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:02:22+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.041525s][吞吐率：24.08req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000489s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003866s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002869s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000830s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002314s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000386s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:02:32+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.038483s][吞吐率：25.99req/s] [内存消耗：3,222.88kb] [文件加载：54]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000402s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002627s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000362s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002615s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000816s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:02:32+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.038955s][吞吐率：25.67req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000533s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003797s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.001788s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002157s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000356s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:02:47+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.040142s][吞吐率：24.91req/s] [内存消耗：3,222.88kb] [文件加载：54]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000410s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006434s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002800s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000787s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:02:47+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.043561s][吞吐率：22.96req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000488s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004822s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002882s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002118s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000355s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000405s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:03:00+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/details?id=2
+[ info ] www.skx.com/index.php/admin/goods_order/details?id=2 [运行时间：0.057843s][吞吐率：17.29req/s] [内存消耗：3,021.18kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->details[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'headerName',
+  7 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000394s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.007752s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.002766s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003970s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.001345s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002862s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`nickname`,`c`.`name`,`c`.`phone`,`c`.`postcode`,`c`.`details` FROM `skx_goods_order` `a` LEFT JOIN `skx_user` `b` ON `a`.`uid`=`b`.`id` LEFT JOIN `skx_address` `c` ON `c`.`user_id`=`a`.`uid` WHERE  `a`.`id` = '2' LIMIT 1 [ RunTime:0.001033s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:04:03+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.032796s][吞吐率：30.49req/s] [内存消耗：3,022.73kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000551s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003306s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002060s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000773s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:04:03+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.039296s][吞吐率：25.45req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000389s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004124s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000302s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002635s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000824s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002292s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000328s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:04:05+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/details?id=2
+[ info ] www.skx.com/index.php/admin/goods_order/details?id=2 [运行时间：0.054973s][吞吐率：18.19req/s] [内存消耗：3,200.45kb] [文件加载：54]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->details[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'headerName',
+  7 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001722s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.008943s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000394s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003150s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002041s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`nickname`,`c`.`name`,`c`.`phone`,`c`.`postcode`,`c`.`details` FROM `skx_goods_order` `a` LEFT JOIN `skx_user` `b` ON `a`.`uid`=`b`.`id` LEFT JOIN `skx_address` `c` ON `c`.`user_id`=`a`.`uid` WHERE  `a`.`id` = '2' LIMIT 1 [ RunTime:0.000407s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:04:53+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.032265s][吞吐率：30.99req/s] [内存消耗：3,022.73kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/package_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000481s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004163s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002203s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000871s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:04:54+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.053687s][吞吐率：18.63req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000495s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004239s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.004340s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.001370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002492s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000234s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000257s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:04:56+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/details?id=2
+[ info ] www.skx.com/index.php/admin/goods_order/details?id=2 [运行时间：0.058809s][吞吐率：17.00req/s] [内存消耗：3,201.89kb] [文件加载：54]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->details[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'headerName',
+  7 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006569s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000924s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.003129s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.002001s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.003341s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`nickname`,`c`.`name`,`c`.`phone`,`c`.`postcode`,`c`.`details` FROM `skx_goods_order` `a` LEFT JOIN `skx_user` `b` ON `a`.`uid`=`b`.`id` LEFT JOIN `skx_address` `c` ON `c`.`user_id`=`a`.`uid` WHERE  `a`.`id` = '2' LIMIT 1 [ RunTime:0.000419s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:14+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/order.html
+[ info ] www.skx.com/index.php/admin/goods_order/order.html [运行时间：0.037599s][吞吐率：26.60req/s] [内存消耗：3,022.73kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/order.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'url',
+  7 => 'statusName',
+  8 => 'headerName',
+  9 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000341s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004310s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002634s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.001110s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:14+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goodsOrder/order?status=0&page=1&limit=30
+[ info ] www.skx.com/index.php/admin/goodsOrder/order?status=0&page=1&limit=30 [运行时间：0.044482s][吞吐率：22.48req/s] [内存消耗：2,960.26kb] [文件加载：49]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goodsOrder',
+    2 => 'order',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'page' => '1',
+  'limit' => '30',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->order[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/Goodsorder.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000395s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003724s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000379s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.002836s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000771s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002609s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `skx_goods_order` WHERE  (   status > 0  ) LIMIT 1 [ RunTime:0.000299s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  (   status > 0  ) ORDER BY id desc LIMIT 0,30 [ RunTime:0.000374s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:26+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/goods/index.html
+[ info ] www.skx.com/index.php/index/goods/index.html [运行时间：0.025631s][吞吐率：39.02req/s] [内存消耗：2,410.90kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Goods->index[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Goods.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/goods/index.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'list',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003897s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods` [ RunTime:0.002843s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods` WHERE  `status` = 10 ORDER BY sort desc [ RunTime:0.000421s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:28+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/goods/details/id/1.html
+[ info ] www.skx.com/index.php/index/goods/details/id/1.html [运行时间：0.027551s][吞吐率：36.30req/s] [内存消耗：2,412.36kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'goods',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/goods/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Goods->details[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Goods.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/goods/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000367s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004538s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000305s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods` [ RunTime:0.003136s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000394s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:32+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/index/index.html
+[ info ] www.skx.com/index.php/index/index/index.html [运行时间：0.031334s][吞吐率：31.91req/s] [内存消耗：2,416.87kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/goods/details/id/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/index/index.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'promo_name',
+  4 => 'user_base',
+  5 => 'user_details',
+  6 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000359s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004939s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_user` [ RunTime:0.003238s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_user_details` [ RunTime:0.002361s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_user_details` WHERE  `uid` = 10000 LIMIT 1 [ RunTime:0.000403s ]
+[ sql ] [ SQL ] SELECT `username` FROM `skx_user` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000294s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/goods/index.html
+[ info ] www.skx.com/index.php/index/goods/index.html [运行时间：0.024909s][吞吐率：40.15req/s] [内存消耗：2,410.90kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Goods->index[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Goods.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/goods/index.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'list',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000385s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004444s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods` [ RunTime:0.002772s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods` WHERE  `status` = 10 ORDER BY sort desc [ RunTime:0.000411s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:05:40+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/index/index.html
+[ info ] www.skx.com/index.php/index/index/index.html [运行时间：0.031806s][吞吐率：31.44req/s] [内存消耗：2,416.87kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/goods/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/index/index.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'promo_name',
+  4 => 'user_base',
+  5 => 'user_details',
+  6 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000352s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004879s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_user` [ RunTime:0.003899s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000371s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_user_details` [ RunTime:0.002634s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_user_details` WHERE  `uid` = 10000 LIMIT 1 [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SELECT `username` FROM `skx_user` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000304s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:09+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_order_list.html
+[ info ] www.skx.com/index.php/index/order/goods_order_list.html [运行时间：0.027084s][吞吐率：36.92req/s] [内存消耗：2,483.16kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000337s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004339s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000310s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.003247s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000409s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/proof/id/2.html [运行时间：0.026865s][吞吐率：37.22req/s] [内存消耗：2,468.05kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000416s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004327s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000278s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002505s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000287s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.043281s][吞吐率：23.10req/s] [内存消耗：2,467.98kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000348s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003374s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.001282s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.005568s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.002079s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.052003s][吞吐率：19.23req/s] [内存消耗：2,467.95kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000490s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006687s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.003295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.004935s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000396s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:18+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/index/order/up_proof.html
+[ info ] www.skx.com/index.php/index/order/up_proof.html [运行时间：0.025217s][吞吐率：39.66req/s] [内存消耗：2,639.06kb] [文件加载：48]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'up_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryiuRiNyZpO0eQEFo8',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.skx.com',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '14717',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->up_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000354s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002075s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000244s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002345s ]
+[ sql ] [ SQL ] UPDATE `skx_package_order`  SET `proof`='/Uploader/Shopping/proof/20180406/cbcabb08ac8f43722961bba4f93d12e5.jpg',`status`=10  WHERE  `id` = 2 [ RunTime:0.000675s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:18+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/order_list.html
+[ info ] www.skx.com/index.php/index/order/order_list.html [运行时间：0.026550s][吞吐率：37.67req/s] [内存消耗：2,483.65kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000359s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003309s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000266s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.003194s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_package_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000431s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/goods/index.html
+[ info ] www.skx.com/index.php/index/goods/index.html [运行时间：0.028873s][吞吐率：34.63req/s] [内存消耗：2,410.90kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'goods',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Goods->index[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Goods.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/goods/index.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'list',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000412s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006194s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods` [ RunTime:0.002568s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods` WHERE  `status` = 10 ORDER BY sort desc [ RunTime:0.000460s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/index/index.html
+[ info ] www.skx.com/index.php/index/index/index.html [运行时间：0.028433s][吞吐率：35.17req/s] [内存消耗：2,416.87kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/goods/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Index.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/index/index.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'promo_name',
+  4 => 'user_base',
+  5 => 'user_details',
+  6 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003880s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000264s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_user` [ RunTime:0.002160s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_user` WHERE  `id` = 10000 LIMIT 1 [ RunTime:0.000283s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_user_details` [ RunTime:0.001792s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_user_details` WHERE  `uid` = 10000 LIMIT 1 [ RunTime:0.000296s ]
+[ sql ] [ SQL ] SELECT `username` FROM `skx_user` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000234s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:42+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_order_list.html
+[ info ] www.skx.com/index.php/index/order/goods_order_list.html [运行时间：0.027567s][吞吐率：36.28req/s] [内存消耗：2,483.16kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000479s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004266s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000272s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002479s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000364s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:51+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/proof/id/2.html [运行时间：0.027282s][吞吐率：36.65req/s] [内存消耗：2,468.05kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000385s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005019s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002182s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:51+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.079622s][吞吐率：12.56req/s] [内存消耗：2,467.98kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008231s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.008657s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.008143s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.014884s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.002195s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:06:51+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.089040s][吞吐率：11.23req/s] [内存消耗：2,467.95kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004713s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.012170s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.005578s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.006451s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000706s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:11:00+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/proof/id/2.html [运行时间：0.029382s][吞吐率：34.03req/s] [内存消耗：2,468.11kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000527s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006769s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.003308s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000354s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:11:00+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.051854s][吞吐率：19.28req/s] [内存消耗：2,468.04kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005474s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.006783s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.006436s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:11:00+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.056838s][吞吐率：17.59req/s] [内存消耗：2,468.01kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011959s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.007099s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.003647s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000395s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:11:07+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/index/order/up_proof.html
+[ info ] www.skx.com/index.php/index/order/up_proof.html [运行时间：0.025950s][吞吐率：38.54req/s] [内存消耗：2,639.12kb] [文件加载：48]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'up_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundarylDART6bAEArwhoVC',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.skx.com',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '40149',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->up_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000367s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002880s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002978s ]
+[ sql ] [ SQL ] UPDATE `skx_package_order`  SET `proof`='/Uploader/Shopping/proof/20180406/5702f4ae744255be12c93ec43b1d9bf8.jpg',`status`=10  WHERE  `id` = 2 [ RunTime:0.000579s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:11:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/order_list.html
+[ info ] www.skx.com/index.php/index/order/order_list.html [运行时间：0.023278s][吞吐率：42.96req/s] [内存消耗：2,483.70kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000404s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002409s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.003301s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_package_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000446s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/proof/id/2.html [运行时间：0.024029s][吞吐率：41.62req/s] [内存消耗：2,468.11kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000393s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003176s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000248s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002301s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000301s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.072876s][吞吐率：13.72req/s] [内存消耗：2,468.04kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003021s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.012794s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.001718s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.013209s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.010055s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:07+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.089306s][吞吐率：11.20req/s] [内存消耗：2,468.01kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003411s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.013570s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.003170s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.006037s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/proof/id/2.html [运行时间：0.029269s][吞吐率：34.17req/s] [内存消耗：2,468.11kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000420s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005207s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000359s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002988s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000793s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.078777s][吞吐率：12.69req/s] [内存消耗：2,468.04kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002378s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.013352s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.010480s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.013466s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.003332s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.089265s][吞吐率：11.20req/s] [内存消耗：2,468.01kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004513s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.017700s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.006816s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.009217s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.002518s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/proof/id/2.html [运行时间：0.024385s][吞吐率：41.01req/s] [内存消耗：2,468.11kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000401s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003846s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000290s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002030s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000262s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.034827s][吞吐率：28.71req/s] [内存消耗：2,468.01kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000429s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003840s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.003217s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000340s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:12:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.063787s][吞吐率：15.68req/s] [内存消耗：2,468.04kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003358s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_package_order` [ RunTime:0.002921s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_package_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000326s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:13:05+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_order_list.html
+[ info ] www.skx.com/index.php/index/order/goods_order_list.html [运行时间：0.029659s][吞吐率：33.72req/s] [内存消耗：2,645.94kb] [文件加载：45]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000454s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004563s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.005457s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000395s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:13:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_proof/id/2.html
+[ info ] www.skx.com/index.php/index/order/goods_proof/id/2.html [运行时间：0.029916s][吞吐率：33.43req/s] [内存消耗：2,468.20kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000349s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.005490s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.004431s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_goods_order` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000348s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:13:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.083816s][吞吐率：11.93req/s] [内存消耗：2,468.13kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004727s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.014604s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.004508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.012541s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_goods_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.010638s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:13:37+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.100107s][吞吐率：9.99req/s] [内存消耗：2,468.09kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/2.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007470s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.015361s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.005295s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.004356s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_goods_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.006744s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:13:47+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/index/order/goods_up_proof.html
+[ info ] www.skx.com/index.php/index/order/goods_up_proof.html [运行时间：0.027958s][吞吐率：35.77req/s] [内存消耗：2,639.13kb] [文件加载：48]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_up_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryX0BtqgR31rGCjZ2l',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.skx.com',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '40149',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '2',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_up_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000418s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003350s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002553s ]
+[ sql ] [ SQL ] UPDATE `skx_goods_order`  SET `proof`='/Uploader/goods/proof/20180406/490cc29a69cf93f15094085dbd2325ff.jpg',`status`=10  WHERE  `id` = 2 [ RunTime:0.000699s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:13:47+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_order_list.html
+[ info ] www.skx.com/index.php/index/order/goods_order_list.html [运行时间：0.025467s][吞吐率：39.27req/s] [内存消耗：2,646.00kb] [文件加载：45]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/2.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000391s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.003289s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000452s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.003059s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000399s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:14:01+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_proof/id/1.html
+[ info ] www.skx.com/index.php/index/order/goods_proof/id/1.html [运行时间：0.027824s][吞吐率：35.94req/s] [内存消耗：2,468.20kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_order_list.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000756s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002254s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002118s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_goods_order` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000285s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:14:01+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer.js
+[ info ] www.skx.com/index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer.js [运行时间：0.054872s][吞吐率：18.22req/s] [内存消耗：2,468.09kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/1.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009550s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.011192s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.004708s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_goods_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000556s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:14:01+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer_mobile.js
+[ info ] www.skx.com/index.php/index/order/goods_proof/id/__INDEX__/js/layer/mobile/layer_mobile.js [运行时间：0.073937s][吞吐率：13.53req/s] [内存消耗：2,468.13kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/1.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '__INDEX__',
+  'js' => 'layer',
+  'mobile' => 'layer_mobile.js',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_proof.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'Arr',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008803s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.011482s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000293s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.005388s ]
+[ sql ] [ SQL ] SELECT `total_price` FROM `skx_goods_order` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000297s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:14:08+08:00 ] 127.0.0.1 127.0.0.1 POST /index.php/index/order/goods_up_proof.html
+[ info ] www.skx.com/index.php/index/order/goods_up_proof.html [运行时间：0.027683s][吞吐率：36.12req/s] [内存消耗：2,639.13kb] [文件加载：48]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_up_proof',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'content-type' => 'multipart/form-data; boundary=----WebKitFormBoundaryug5vYsBuTP4TYZWf',
+  'upgrade-insecure-requests' => '1',
+  'origin' => 'http://www.skx.com',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'content-length' => '40464',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_up_proof[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000330s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002370s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000261s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002451s ]
+[ sql ] [ SQL ] UPDATE `skx_goods_order`  SET `proof`='/Uploader/goods/proof/20180406/852ecdca44f593aed6671922380ffe69.jpg',`status`=10  WHERE  `id` = 1 [ RunTime:0.000574s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:14:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/goods_order_list.html
+[ info ] www.skx.com/index.php/index/order/goods_order_list.html [运行时间：0.024317s][吞吐率：41.12req/s] [内存消耗：2,483.34kb] [文件加载：43]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'goods_order_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/index/order/goods_proof/id/1.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\index\controller\Order->goods_order_list[ /Applications/MxSrvs/www/shenkangxi/application/index/controller/Order.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/index/view/order/goods_order_list.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'data',
+  4 => 'titleName',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000615s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.002921s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002719s ]
+[ sql ] [ SQL ] SELECT * FROM `skx_goods_order` WHERE  `status` > 0  AND `uid` = 10000 ORDER BY id desc [ RunTime:0.000472s ]
+---------------------------------------------------------------
+[ 2018-04-06T00:14:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/admin/goods_order/details?id=1
+[ info ] www.skx.com/index.php/admin/goods_order/details?id=1 [运行时间：0.048891s][吞吐率：20.45req/s] [内存消耗：3,021.14kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MxSrvs/www/shenkangxi/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'goods_order',
+    2 => 'details',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=02dl0hmf6j1u0to3ftlli8ril8',
+  'accept-language' => 'en,zh-CN;q=0.9,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.skx.com/index.php/admin/goods_order/order.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.skx.com',
+  'content-type' => '',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'id' => '1',
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\admin\controller\GoodsOrder->details[ /Applications/MxSrvs/www/shenkangxi/application/admin/controller/GoodsOrder.php ]
+[ info ] [ VIEW ] /Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/goods_order/details.html [ array (
+  0 => 'configArr',
+  1 => 'vip',
+  2 => 'm_lever',
+  3 => 'userName',
+  4 => 'navList',
+  5 => 'Arr',
+  6 => 'headerName',
+  7 => 'navArr',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000609s ] mysql:dbname=shenkangxi;host=127.0.0.1;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_config` [ RunTime:0.004781s ]
+[ sql ] [ SQL ] SELECT `name`,`value` FROM `skx_config` WHERE  (  status>0 ) [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_menu` [ RunTime:0.004983s ]
+[ sql ] [ SQL ] SELECT `skx_menu`.* FROM `skx_menu` RIGHT JOIN `skx_module` `skx_module` ON `skx_module`.`id`=`skx_menu`.`module_id` WHERE  (  skx_menu.status>0 AND skx_module.status>0 ) ORDER BY skx_module.sort desc,skx_menu.sort desc [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `skx_goods_order` [ RunTime:0.002422s ]
+[ sql ] [ SQL ] SELECT `a`.*,`b`.`nickname`,`c`.`name`,`c`.`phone`,`c`.`postcode`,`c`.`details` FROM `skx_goods_order` `a` LEFT JOIN `skx_user` `b` ON `a`.`uid`=`b`.`id` LEFT JOIN `skx_address` `c` ON `c`.`user_id`=`a`.`uid` WHERE  `a`.`id` = '1' LIMIT 1 [ RunTime:0.000510s ]

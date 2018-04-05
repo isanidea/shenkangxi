@@ -1,0 +1,36 @@
+{extend name="public:base" /}
+{block name="css"}
+<style type="text/css">
+    .hide{display: none}
+</style>
+{/block}
+
+{block name="content"}
+
+
+<div style="width: 800px; padding-top: 30px;">
+    <form method="post" class="layui-form" action="{:url('brokerage/edit')}" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$config_info['id'] ? $config_info['id'] : 0}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">{$config_info['name']}</label>
+            <div class="layui-input-inline">
+                <input type="text" name="value" lay-verify="required" autocomplete="off" class="layui-input" >  
+                <span>不需要写%</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="" class="layui-form-label"></label>
+            <div class="layui-input-inline">
+               <input type="submit" value="提交修改配置" class="layui-btn">
+            </div>
+        </div>
+    </form>
+</div>
+
+{/block}
+
+
+<script type="text/javascript">
+
+</script>
+{/block}

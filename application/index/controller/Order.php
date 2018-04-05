@@ -69,10 +69,10 @@ class Order extends  IndexBase
             $map = input('post.');
            $file =  $this->request->file('file');
            if($file){
-               $info = $file ->move(ROOT_PATH.'../public'.DS.'Uploader/Shopping/proof');
+               $info = $file ->move(ROOT_PATH.'public'.DS.'Uploader/Shopping/proof');
                if($info){
                    $imgUrl = '/Uploader/Shopping/proof/'.$info->getSaveName();
-                   Db::name("PackageOrder")->where("id",$map["id"])->update(array("proof"=>$imgUrl,"status"=>15));
+                   Db::name("PackageOrder")->where("id",$map["id"])->update(array("proof"=>$imgUrl,"status"=>10));
                    $this->redirect('Order/order_list');
                }else{
                    $this->error("上传支付凭证失败");
@@ -119,11 +119,12 @@ class Order extends  IndexBase
                 "pid" => $data["pid"],
                 "pname" => $package["pname"],
                 "pimg" => $package["img"],
+                'sales_price'=>$package['sales_price'],
                 "total_price" => $total_price,
                 "buy_num" => $data["buy_sum"],
                 "payway" => $data['pay_type'],
                 "buy_time" => time(),
-                "status" => 10,
+                "status" => 6,
             );
 
             $id = Db::name("PackageOrder")->insert($Arr,false,true);
@@ -178,7 +179,7 @@ class Order extends  IndexBase
       'sales_jifen' => string '200.00' (length=6)
       'add_time' => int 1522203243
       'status' => int 10
-      'buy_num' => string '4' (length=1)          
+      'buy_num' => string '4' (length=1)
      */
     public function product_order(){
          if( request()->isPost() ){
@@ -202,16 +203,16 @@ class Order extends  IndexBase
     }
 
     /**
-     * 
-     获取的参数：
+     *
+        获取的参数：
      array (size=6)
       'remark' => string '' (length=0)
-      'pay_type' => string '1' (length=1)
+          'pay_type' => string '1' (length=1)
       'address_id' => string '19' (length=2)
       'product_id' => string '1' (length=1)
-      'buy_sum' => string '4' (length=1)
-      'total_price' => string '800' (length=3)*
-     *
+      'buy_sum'     => string '4' (length=1)
+      'total_pric   e' => string '800' (length=3)*
+        *
      */
     public function product_pay(){
          $render_json = new Json();
@@ -267,32 +268,37 @@ class Order extends  IndexBase
                 $render_json->tojson();
 
            }
-            $update_jifen = Db::name('user_details')->where('uid',$this->userInfo['id'])->setDec('jifen',$total_jifen);          
+            $update_jifen = Db::name('user_details')->where('uid',$this->userInfo['id'])->setDec('jifen',$total_jifen);
             if(empty($update_jifen)){
                 $render_json->status = 4;
                 $render_json->msg = "扣除积分失败";
                 $render_json->tojson();
             }
-//            if( $total_price > $userInfo["integral"] ){
-//                $integral = $userInfo["integral"];
-//                $money = $total_price - $userInfo["integral"];
-//            }else{
-//                $integral = $total_price;
-//                $money = "0.00";
-//            }
-//            $profit = $total_price - ($package['cost_price'] * $data['buy_sum']);
-
             $Arr = array(
                 "order_no" => "jf".time().$this->userInfo["id"],
                 "uid" => $this->userInfo["id"],
                 "product_id" => $product["id"],
                 "product_name" => $product["product_name"],
+                'product_jifen'=>$product['sales_jifen'],
                 "total_jifen" => $total_jifen,
-                "product_num" => $data["buy_sum"],
+                "buy_num" => $data["buy_sum"],
                 "payway" => $data['pay_type'],
                 "add_time" => time(),
-                "status" => 1,//正常状态
+                "f_time"=>time(),
+                "status" => 6,//待审核
             );
+            /*
+            'order_no' => string 'jf152291857210000' (length=17)
+            'uid' => int 10000
+            'product_id' => int 1
+            'product_name' => string '积分产品' (length=12)
+            'total_jifen' => float 400
+            'product_num' => string '2' (length=1)
+            'payway' => string '1' (length=1)
+            'add_time' => int 1522918572
+            'f_time' => int 1522918572
+            'status' => int 10
+             */
 
             $id = Db::name("productOrder")->insert($Arr,false,true);
             //acting 代金券
@@ -301,12 +307,12 @@ class Order extends  IndexBase
                 $render_json->msg = "订单创建成功";
                 $this->redirect('product_order_list');
                 $render_json->tojson();
-                }
-            }else{
+                }else{
                 $render_json->status = 5;
                 $render_json->msg = "订单创建失败";
                 $render_json->tojson();
             }
+          }
     }
 
     /*
@@ -324,7 +330,7 @@ class Order extends  IndexBase
      */
     public function product_order_list(){
 
-        $list = Db::name("productOrder")->where(array("status"=>["gt",0],"uid"=>$this->userInfo["id"]))->order('order_id desc')->select();
+        $list = Db::name("productOrder")->where(array("status"=>["gt",0],"uid"=>$this->userInfo["id"]))->order('id desc')->select();
         $this->titleName = "我的商城订单";
         $this->assign("data",$list);
         return $this->fetch();
@@ -340,7 +346,7 @@ class Order extends  IndexBase
     public function goods_order(){
            if( request()->isPost() ){
             $map = input('post.');
-             $goods_info = Db::name('goods')->where('goods_id',$map['goods_id'])->find();
+             $goods_info = Db::name('goods')->where('id',$map['id'])->find();
             $address = Db::name("address")->where('user_id',$this->userInfo["id"])->select();
             foreach($address as $k=>$v){
                 $address[$k]["details"] = str_replace(">"," ",$v["details"]);
@@ -361,7 +367,7 @@ class Order extends  IndexBase
     'remark' => string '' (length=0)
       'pay_type' => string '1' (length=1)
       'address_id' => string '19' (length=2)
-      'goods_id' => string '1' (length=1)
+      'id' => string '1' (length=1)
       'buy_sum' => string '3' (length=1)
       'total_price' => string '60' (length=2)
      */
@@ -369,22 +375,21 @@ class Order extends  IndexBase
         //插入订单
         $map = input('param.');
         if($map['pay_type'] == 1){
-            $goods_info = Db::name("goods")->where(array("goods_id"=>$map["goods_id"],"status"=>1))->find();
-
+            $goods_info = Db::name("goods")->where(array("id"=>$map["id"],"status"=>10))->find();
             $total_price = $map['buy_sum']*$goods_info['sales_price'];
 
             $Arr = array(
                 "order_no" => "sj".time().$this->userInfo["id"],
-                "user_id" => $this->userInfo["id"],
-                "goods_id" => $goods_info["goods_id"],
+                "uid" => $this->userInfo["id"],
+                "goods_id" => $goods_info["id"],
                 "address_id"=>$map['address_id'],
                 'goods_price'=>$goods_info['sales_price'],
                 "goods_name" => $goods_info["goods_name"],
                 "total_price" => $total_price,
-                "goods_num" => $map["buy_sum"],
+                "buy_num" => $map["buy_sum"],
                 "payway" => $map['pay_type'],
                 "add_time" => time(),
-                "status" => 1,//正常状态
+                "status" => 6,//待支付
             );
 
             $id = Db::name("goodsOrder")->insert($Arr,false,true);
@@ -393,7 +398,7 @@ class Order extends  IndexBase
                 }
             }
 
-        }    
+        }
 
 
     public function goods_proof(){
@@ -413,17 +418,18 @@ class Order extends  IndexBase
         return $this->fetch();
     }
     /*
-     * 长传凭证提交处
+     * 上传凭证提交处
      */
     public function goods_up_proof(){
         if( request()->isPost()){
             $map = input('post.');
            $file =  $this->request->file('file');
            if($file){
-               $info = $file ->move(ROOT_PATH.'../public'.DS.'Uploader/Shopping/proof');
+               $info = $file ->move(ROOT_PATH.'public'.DS.'Uploader/goods/proof');
                if($info){
-                   $imgUrl = '/Uploader/Shopping/proof/'.$info->getSaveName();
-                   Db::name("goodsOrder")->where("id",$map["id"])->update(array("proof"=>$imgUrl,"status"=>6));
+                   $imgUrl = '/Uploader/goods/proof/'.$info->getSaveName();
+
+                   Db::name("goodsOrder")->where("id",$map["id"])->update(array("proof"=>$imgUrl,"status"=>10));
                    $this->redirect('Order/goods_order_list');
                }else{
                    $this->error("上传支付凭证失败");
@@ -434,7 +440,7 @@ class Order extends  IndexBase
 
     public function goods_order_list(){
 
-        $list = Db::name("goodsOrder")->where(array("status"=>["gt",0],"user_id"=>$this->userInfo["id"]))->order('id desc')->select();
+        $list = Db::name("goodsOrder")->where(array("status"=>["gt",0],"uid"=>$this->userInfo["id"]))->order('id desc')->select();
         $this->titleName = "我的商城订单";
         $this->assign("data",$list);
         return $this->fetch();
@@ -454,45 +460,3 @@ class Order extends  IndexBase
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,172 @@
+{extend name="public:base" /}
+{block name="css"}
+<style type="text/css">
+    .hide{display: none}
+</style>
+{/block}
+{block name="content"}
+
+<div style="width: 800px; padding-top: 30px;">
+    <form method="post"  class="layui-form" action='{:url("product/edit")}' enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$Arr['id'] ? $Arr['id'] : 0}">
+        <div class="layui-form-item">
+            <label class="layui-form-label">商品名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="product_name" lay-verify="required" autocomplete="off" class="layui-input" value="{$Arr['product_name']? $Arr['product_name'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">成本价</label>
+            <div class="layui-input-inline">
+                <input type="text" name="cost_jifen" lay-verify="number" autocomplete="off" class="layui-input" value="{$Arr['cost_jifen']? $Arr['cost_jifen'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">出售价</label>
+            <div class="layui-input-inline">
+                <input type="text" name="sales_jifen"    lay-verify="number" autocomplete="off" class="layui-input" value="{$Arr['sales_jifen']? $Arr['sales_jifen'] : ''}">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">排序</label>
+            <div class="layui-input-inline">
+                <input type="text" name="sort"  lay-verify="sort" autocomplete="off" class="layui-input" value="{$Arr['sort']? $Arr['sort'] : '1'}">
+            </div>
+            <div class="layui-form-mid layui-word-aux">请输入1-99</div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">是否上线</label>
+            <div class="layui-input-inline">
+                <select name="status">
+                    <option value="5" {$Arr['status'] == 5 ? 'selected' : ''}>下线</option>
+                    <option value="10" {$Arr['status'] == 10 ? 'selected' : ''} >上线</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">商品图片</label>
+            <div class="layui-input-inline">
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn" id="test1">上传图片</button>
+                    <div class="layui-upload-list">
+                        <img src="{$Arr['img']? $Arr['img'] : ''}" class="layui-upload-img" id="demo1" width="100px" height="100px">
+                        <p id="demoText"></p>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="fileImg" name="img" value="{$Arr['img']? $Arr['img'] : ''}">
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">商品详情</label>
+            <div class="layui-input-block">
+                <textarea name="details" id="editor" type="text/plain"   style="height: 600px; width: 100%">{$Arr['details']? $Arr['details'] : ''}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{/block}
+
+
+{block name="js"}
+<script src="__STATIC__/admin/js/fromCommon.js" charset="utf-8"></script>
+<script charset="utf-8" src="__STATIC__/js/ueditor/ueditor.config.js"></script>
+<script charset="utf-8" src="__STATIC__/js/ueditor/ueditor.all.min.js"></script>
+<script charset="utf-8" src="__STATIC__/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form;
+        var layer = layui.layer;
+
+        //自定义验证规则
+        form.verify({
+
+            sort: function(value){
+                if( value == "" || 0 > parseInt(value) || parseInt(value) > 99 ){
+                    return '请输入排序1到99数字';
+                }
+            }
+        });
+
+//        //监听提交
+//        form.on('submit(formDemo)', function(data){
+//            var url = $("#from").attr("data-url");
+//            $.ajax({
+//                type: 'POST',
+//                url: url,
+//                dataType: 'json',
+//                data: data.field,
+//                success: function (da) {
+//                    if( da.result == 0 ){
+//                        prompt_From_one("编辑成功！");
+//                    }else{
+//                        prompt_From_one("编辑失败！");
+//                    }
+//                }
+//            });
+//            return false;
+//        });
+
+    });
+
+
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: '{:url("product/up_image")}' //上传接口
+            ,done: function(res){
+                if(res.code == 0){
+                    var da = res.msg;
+                    $('#demo1').attr('src', da.imgUrl); //图片链接（base64）
+                    $("#fileImg").val(da.imgUrl);
+                }else{
+                    return layer.msg('上传失败');
+                }
+            }
+
+        });
+    });
+
+    $(document).ready(function() {
+
+        ue = UE.getEditor('editor', {
+            autoHeightEnabled: false, toolbars: [
+                [
+                    'fullscreen',
+                    'source',
+                    'undo',
+                    'redo',
+                    'bold',
+                    'indent',
+                    'snapscreen',
+                    'simpleupload', //单图上传
+                    'insertimage',
+                    'justifyleft', //居左对齐
+                    'justifyright', //居右对齐
+                    'justifycenter', //居中对齐
+                    'justifyjustify', //两端对齐
+                    'forecolor', //字体颜色
+                    'backcolor', //背景色
+                    'link', //超链接
+                    'emotion', //表情
+                ]
+
+            ]
+        });
+    });
+</script>
+{/block}

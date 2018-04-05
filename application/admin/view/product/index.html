@@ -1,0 +1,86 @@
+{extend name="public:base" /}
+{block name="css"}
+<link rel="stylesheet" href="__STATIC__/admin/css/adminPage.css"  media="all">
+{/block}
+{block name="content"}
+<a class="layui-btn layui-btn-normal" href='{:url("product/add")}' >添加商品</a>
+
+
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="100">
+        <col width="200">
+        <col width="200">
+        <col width="100">
+        <col width="200">
+        <col width="100">
+        <col width="100">
+        <col width="100">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>排序</th>          
+
+        <th>商品名</th>
+        <th>图片</th>
+        <th>成本价</th>
+        <th>售价</th>
+        <th>状态</th>
+        <th>添加时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $list as $v}
+    <tr>
+        <td>{$v->id}</td>
+        <td>{$v->sort}</td>
+        <td>{$v->product_name}</td>
+        <td>
+            <img src="{$v->img}" style="width: 60px;height: 60px;">
+        </td>
+        <td>{$v->cost_jifen}</td>
+        <td>{$v->sales_jifen}</td>
+        <td>
+            {$v->status == 5 ? '<span>下线</span>' : '<span style="color: red">上线</span>'}
+        </td>
+        <td>
+            {$v->add_time|date="y-m-d H:i",###}
+        </td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a  class="layui-btn layui-btn-mini" href='{:url("Product/add",array("id"=>$v["id"]))}' lay-event="edit">编辑</a>
+                {if condition="$v.status eq 5"}
+                <a onclick="saveStatusVal(this,'{$v->id}',10)" data-url='{:url("Product/saveStatus")}' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">上线</>
+                {elseif condition="$v.status eq 10"/}
+                <a onclick="saveStatusVal(this,'{$v->id}',5)" data-url='{:url("Product/saveStatus")}' class="layui-btn layui-btn-normal layui-btn-mini" lay-event="edit">下线</a>
+                {/if}
+                <a class="layui-btn layui-btn-danger layui-btn-mini" onclick="deleteFuc(this,'{$v->id}')" data-url='{:url("product/delete")}'>删除</a>
+            </div>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+<div style="text-align: center">
+    {$list->render()}
+    <p>共 <span style="color: #FF5722">{$pagetotal}</span> 条</p>
+</div>
+{/block}
+
+{block name="js"}
+<script src="__STATIC__/admin/js/fromCommon.js" charset="utf-8"></script>
+{/block}
+{block name="javascript"}
+
+
+
+<script>
+
+</script>
+
+{/block}

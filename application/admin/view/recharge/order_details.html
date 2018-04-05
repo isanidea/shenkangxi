@@ -1,0 +1,178 @@
+{extend name="public:layerbase" /}
+
+{block name="style"}
+
+<style type="text/css">
+    .details{padding: 15px 10px 20px;}
+    .details li{padding-top: 5px;width: 50%;float: left;}
+    .details li span{display: block;float: left;width: 120px;line-height: 25px;text-align: right;}
+    .details li p{display: block;float: left;line-height: 25px;margin-left: 5px}
+    .details .proof{padding-top: 15px;}
+    .details .proof p{font-size: 18px;line-height: 30px;text-align: center;color: red;}
+    .details .proof .img{width: 400px;margin: 0px auto;}
+    .details .proof .img img{display: block;width: 100%;}
+    .details .but{width: 180px; margin: 0px auto;padding-top: 10px;}
+</style>
+
+{/block}
+
+{block name="content"}
+<div class="details">
+
+    <li>
+        <span>订单编号：</span>
+        <p>{$Arr.order_no}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>充值人ID：</span>
+        <p>{$Arr.uid}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>姓名：</span>
+        <p>{$Arr.real_name}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>账号：</span>
+        <p>{$Arr.username}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>金额：</span>
+        <p>{$Arr.money}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>状态：</span>
+        <p style="color: red">{$Arr.statusName}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>支付类型：</span>
+        <p>{$Arr['payway'] == 1 ? '线下' : '线上'}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>下单时间：</span>
+        <p>{$Arr.add_time|date="Y-m-d H:m:s",###}</p>
+        <div style="clear: both"></div>
+    </li>
+    <li>
+        <span>支付时间：</span>
+        {if condition="$Arr.payway == 0"}
+        <p>&nbsp;</p>
+        {else}
+        <p>{$Arr.pay_time|date="Y-m-d H:m:s",###}</p>
+        {/if}
+        <div style="clear: both"></div>
+    </li>
+
+    <div style="clear: both"></div>
+    <div class="but">
+        {if condition="$Arr.status == 10 or $Arr.status == 15 "}
+        <button class="layui-btn layui-btn-normal" onclick='order_del("{$Arr.id}")'>驳回</button>
+        <button class="layui-btn layui-btn-normal" onclick='order_puy("{$Arr.id}")'>确认付款</button>
+        {/if}
+    </div>
+    <div class="proof">
+        <p>打款凭证</p>
+        <div class="img">
+            <a target="_blank" href="{$Arr.proof}">
+                <img src="{$Arr.proof}">
+            </a>
+        </div>
+    </div>
+</div>
+
+{/block}
+
+{block name="js"}
+
+{/block}
+
+{block name="javascript"}
+
+<script type="text/javascript">
+
+    function order_del(id){
+        layer.confirm('确定为驳回吗？不可更改！', function(index){
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Recharge/order_del")}',
+                dataType: 'json',
+                data: {id: id,status:5},
+                success: function (data) {
+                    layer.close(index);
+                    if( data.result != 0 ){
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                layer.close(index);
+                            }
+                        });
+                    }else{
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                            ,cancel:function(index){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                        });
+                    }
+                }
+            });
+
+        });
+    }
+
+    function order_puy(id){
+        layer.confirm('确定支付了吗？不可更改！', function(index){
+            $.ajax({
+                type: 'POST',
+                url: '{:url("Recharge/affirm_puy")}',
+                dataType: 'json',
+                data: {id: id,status:0},
+                success: function (data) {
+                    layer.close(index);
+                    if( data.result != 0 ){
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                layer.close(index);
+                            }
+                        });
+                    }else{
+
+                        layer.open({
+                            content: data.msg//
+                            ,yes: function(index, layero){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                            ,cancel:function(index){
+                                var tk = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+                                parent.layer.close(tk);
+                                layer.close(index);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+</script>
+
+{/block}

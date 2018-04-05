@@ -1,0 +1,51 @@
+{extend name="public:base" /}
+{block name="style"}
+
+<style type="text/css">
+    .record ul li h2 i{font-style: normal;color: #ff2d17}
+    .order-bt{line-height: 25px;height: 25px;padding-top: 5px}
+    .order-bt a{float: left;margin-right: 20px;display: block;line-height: 25px;width: 60px; text-align: center;background-color:#de484f;color: #fff; border-radius: 5px;}
+
+</style>
+
+{/block}
+
+{block name="html"}
+
+<div class="record">
+    <h1 class="h1">充值记录</h1>
+    <ul>
+        {foreach name="list" item="v"}
+        <li>
+            <h2>充值&nbsp;&nbsp;&nbsp;<i>(
+                {if condition="$v.status == 5"}
+                驳回
+                {elseif condition="$v.status == 10"/}
+                待上传
+                {elseif condition="$v.status == 15"/}
+                已上传
+                {elseif condition="$v.status == 20"/}
+                已完成
+                {/if}
+                )</i></h2>
+            <em>价格：{$v.money}</em>
+            <span>{$v.c_time|date="Y-m-d H:m:s",###}</span>
+            <div style="clear: both"></div>
+            <div class="order-bt">
+                <a href='{:url("Recharge/proof",array("id"=>$v.id))}'>上传</a>
+                <a href='{:url("Recharge/examine",array("id"=>$v.id))}'>查看</a>
+                <div style="clear: both"></div>
+            </div>
+        </li>
+        {/foreach}
+    </ul>
+</div>
+
+{/block}
+{block name="js_file"}
+
+{/block}
+{block name="javascript"}
+
+
+{/block}

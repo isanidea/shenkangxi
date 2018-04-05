@@ -69,7 +69,7 @@ body{background: #f4f4f4;}
 	display: inline-block;
 	border-radius: 100%;
 	background: #fff;
-	
+
 }
 .swiper-pagination-bullet-active {
 	opacity: 1;
@@ -104,7 +104,7 @@ body{background: #f4f4f4;}
         -webkit-align-items: center;
         align-items: center;
     }
-    
+
      .swiper-container {
         width: 100%;
         height: 100%;
@@ -130,7 +130,7 @@ body{background: #f4f4f4;}
         -webkit-align-items: center;
         align-items: center;
     }
-    
+
 .swiper-container {
 	margin: 0 auto;
 	position: relative;
@@ -207,7 +207,7 @@ text-align: center;color: #333;}
 .zf_z .slgm .join-money{box-sizing: border-box;width: 40px;}
 .zf_z .slgm span{font-size: 16px;}
 .zf_z>a{width: 100vw;height: 40px;background: #007AFF;display: block;text-align: center;line-height: 40px;color: #fff;
-position: absolute;bottom: 0px;}
+position:relative;bottom: 0px;}
 
 .jsxx h6{width: 100%;background: #fff;text-align: center;font-size: 18px;font-weight: 500;padding: 10px 0;}
 .jsxx dt span{font-family: serif;}
@@ -262,7 +262,7 @@ marquee{float: right;width: 70vw;font-size: 14px;}
 .ddjh .li_9{animation-delay:69s}
 .ddjh .li_10{animation-delay:67s}
 .ddjh li i{display:block;width: 40px;height: 40px;border-radius: 60%;overflow: hidden;float: left;margin-left: -10px;}
-	
+
 .ddjh li{width:220px;border-radius: 20px;left: 10vw;text-align: center;color: #fff;line-height: 40px;height: 40px;font-size: 12px;
 background:rgba(0,0,0,0.5);position: fixed;top:30vh;z-index: 10000;opacity: 0;animation:myfirst 3s;}
 @keyframes myfirst
@@ -289,7 +289,7 @@ background:rgba(0,0,0,0.5);position: fixed;top:30vh;z-index: 10000;opacity: 0;an
 	  background:none;
 	  background: url(../img/xfq.png) no-repeat;
 	  background-size: 100% 100%;
-	  
+
 	}
 	.draggable img{width: 100%;}
 
@@ -308,7 +308,3 @@ background:rgba(0,0,0,0.5);position: fixed;top:30vh;z-index: 10000;opacity: 0;an
 .sys_spec_text li i{ position:absolute; width:10px; height:10px; font-size:0; line-height:0; right:2px; bottom:2px; background:url(img/sys_item_selected.gif) no-repeat right bottom; z-index:99; display:none;}
 .sys_spec_text li.selected a{ border:2px solid #e4393c; padding:0 5px;}
 .sys_spec_text li.selected i{ display:block;}
-
-
-
-

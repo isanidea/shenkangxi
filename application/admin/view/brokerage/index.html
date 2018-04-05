@@ -1,0 +1,39 @@
+{extend name="public:base" /}
+{block name="content"}
+
+<table class="layui-table">
+    <colgroup>
+        <col width="60">
+        <col width="150">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+    </colgroup>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>配置名</th>
+        <th>配置值</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {foreach $all_config as $v}
+    <tr>
+        <td>{$v.id}</td>
+        <td>{$v.name}</td>
+        <td>{$v.value}</td>
+        <td>
+            <div class="layui-table-cell laytable-cell-1-10">
+                <a class="layui-btn layui-btn-mini" href='{:url("Brokerage/edit",array("id"=>$v["id"]))}'  lay-event="edit">编辑</a>
+            </div>
+        </td>
+    </tr>
+    {/foreach}
+    </tbody>
+</table>
+
+
+{/block}
+
+

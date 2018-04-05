@@ -1,5 +1,13 @@
 {extend name="public/base" /}
 {block name="content"}
+<style type="text/css">
+    .sb_4{
+        color:blue;
+    }
+    .sb_4 span{
+        color:blue;
+    }
+</style>
 <div style="background: #f4f4f4;width:100vw;overflow: hidden;">
     <header>
         <i class="xf_2 sc_1"><img src="__STATIC__/qiantai/img/wo.png"/></i>
@@ -9,14 +17,12 @@
         </p>
     </header>
 
-
-
     <div class="colount">
         <div class="colount_top">
             <ul>
                 <li><a ><p>{$vip[$user_details['lever']]}创客</p>级别</a></li>
                 <li><a ><p>{$m_lever[$user_details['manage_lever']]}</p>职务级别</a></li>
-                
+
             </ul>
         </div>
         <div class="colount_nav">
@@ -32,8 +38,9 @@
                 <li><a href="shouyi_record.html" class="iconfont icon-hangqing" ><span>使用明细</span></a></li>
                 <li><a href="shopp_record.html" class="iconfont icon-wenjian" ><span>资产包购买记录</span></a></li>
                 <li><a href="tixian_record.html" class="iconfont icon-xinwen" ><span>提现记录</span></a></li>
-                <li><a href="shopp_list.html" class="iconfont icon-xinwen" ><span>消费商城订单</span></a></li>
-                <li><a href="shopp_list.html" class="iconfont icon-xinwen" ><span>积分商城订单</span></a></li>
+                <li><a href="{:url('Order/order_list')}" class="iconfont icon-xinwen" ><span>升级商城订单</span></a></li>
+                <li><a href="{:url('Order/product_order_list')}" class="iconfont icon-xinwen" ><span>积分商城订单</span></a></li>
+                <li><a href="{:url('Order/goods_order_list')}" class="iconfont icon-xinwen" ><span>小商城订单</span></a></li>
             </ul>
             <h6 class="ic_h6">编辑</h6>
             <ul>

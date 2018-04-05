@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/module/edit.html";i:1506075493;s:90:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/layerbase.html";i:1522310898;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/module/edit.html";i:1506075493;s:90:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/layerbase.html";i:1522469719;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +50,7 @@
 
 
 <script src="__STATIC__/js/jquery-3.2.1.min.js" charset="utf-8"></script>
-<!--<script src="__ADMIN__/layer/layer.js" charset="utf-8"></script>-->
+<script src="__STATIC__/layer/layer.js" charset="utf-8"></script>
 <script src="__STATIC__/layui/layui.js"  charset="utf-8"></script>
 <script src="__STATIC__/admin/js/common.js" charset="utf-8"></script>
 

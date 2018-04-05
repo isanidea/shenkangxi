@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:93:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package_order/order.html";i:1522419906;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:93:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/package_order/order.html";i:1522928701;s:85:"/Applications/MxSrvs/www/shenkangxi/public/../application/admin/view/public/base.html";i:1522395744;}*/ ?>
 <!DOCTYPE html>
 
 <html>
@@ -159,11 +159,11 @@
             <tr>
                 <th lay-data="{field:'id', width:60, sort: true}">ID</th>
                 <th lay-data="{field:'order_no', width:200}">订单编号</th>
-                <th lay-data="{field:'uid', width:150}">购买人ID</th>
-                <th lay-data="{field:'pname', width:268}">商品名</th>
+                <th lay-data="{field:'uid', width:100}">购买人ID</th>
+                <th lay-data="{field:'pname', width:150}">商品名</th>
                 <th lay-data="{field:'total_price', width:100}">支付金额</th>
                 <th lay-data="{field:'buy_num', width:100}">数量</th>
-                <th lay-data="{field:'buy_time', width:200, sort: true}">购买时间</th>
+                <th lay-data="{field:'buy_time', width:150, sort: true}">购买时间</th>
                 <th lay-data="{field:'statusName', width:150, sort: true}">状态</th>
                 <th lay-data="{field:'statusVal', width:200,toolbar: '#barDemo'}">操作</th>
             </tr>
@@ -257,7 +257,7 @@
                         title:"订单详情",
                         type: 2,
                         area: ['800px', '800px'],
-                        content: ['/index.php/admin/packageOrder/details?id='+id, 'no'],
+                        content: ['/index.php/admin/package_order/details?id='+id, 'no'],
                         end: function () {
                             location.reload();
                         }
